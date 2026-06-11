@@ -1,11 +1,6 @@
 import os
 import glob
 
-"""
-Zapisuje ostaatnei 20 rekordow (nie jest uzywane)
-
-"""
-
 def clean_grdc_file(file_path, output_path):
     metadata = {
         "River": "Nieznana",
@@ -58,11 +53,22 @@ def clean_grdc_file(file_path, output_path):
         else:
             # Sprawdzamy czy linia zawiera dane (jest separator i nie jest to nagłówek tabeli YYYY-MM-DD)
             if ';' in stripped and not stripped.startswith('YYYY'):
-                # rstrip() zachowuje oryginalne wyrównanie i spacje wewnątrz linii danych
-                data_lines.append(line.rstrip())
+                parts = stripped.split(';')
+                if parts:
+                    date_part = parts[0].strip()
+                    try:
+                        # Wyciągamy rok z daty (YYYY-MM-DD)
+                        year = int(date_part.split('-')[0])
+                        # Zostawiamy tylko i wyłącznie lata 2023, 2024 oraz 2025
+                        if year in [2023, 2024, 2025]:
+                            # rstrip() zachowuje oryginalne wyrównanie i spacje wewnątrz linii danych
+                            data_lines.append(line.rstrip())
+                    except (ValueError, IndexError):
+                        pass # Ignoruj uszkodzone wiersze
 
-    # Pobieramy dokładnie ostatnich 20 rekordów
-    last_20_records = data_lines[-20:]
+    # JEŚLI BRAK DANYCH Z LAT 2023-2025 - POMIJAMY GENEROWANIE PLIKU PLIKU
+    if not data_lines:
+        return False
     
     # Budujemy strukturę wyjściową dbając o idealne wyrównanie spacji ze wzoru
     output_lines = [
@@ -76,43 +82,16 @@ def clean_grdc_file(file_path, output_path):
         "" # Pusta linia oddzielająca metadane od rekordów
     ]
     
-    output_lines.extend(last_20_records)
+    output_lines.extend(data_lines)
     
     # Zapisujemy nowy plik w bezpiecznym kodowaniu UTF-8
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(output_lines) + '\n')
+        
+    return True
 
 
 def process_entire_dataset(input_folder='dataset', output_folder='cleaned_dataset'):
     # Sprawdzenie czy folder wejściowy istnieje
     if not os.path.exists(input_folder):
-        print(f"Błąd: Folder źródłowy '{input_folder}' nie istnieje!")
-        return
-
-    # Tworzenie folderu wyjściowego jeśli nie istnieje
-    if not os.path.exists(output_folder):
-        os.makedirs(output_folder)
-        
-    # Pobranie wszystkich plików z folderu
-    search_pattern = os.path.join(input_folder, '*')
-    all_files = [f for f in glob.glob(search_pattern) if os.path.isfile(f)]
-    
-    print(f"Rozpoczęto przetwarzanie... Znaleziono {len(all_files)} plików w '{input_folder}'.")
-    
-    success = 0
-    for file_path in all_files:
-        file_name = os.path.basename(file_path)
-        output_path = os.path.join(output_folder, file_name)
-        
-        try:
-            clean_grdc_file(file_path, output_path)
-            success += 1
-        except Exception as e:
-            print(f" -> Błąd w pliku {file_name}: {str(e)}")
-            
-    print(f"\nSukces! Oczyszczono poprawnie {success} z {len(all_files)} plików.")
-    print(f"Wyczyszczone dane zostały zapisane w folderze: '{output_folder}'")
-
-
-if __name__ == '__main__':
-    process_entire_dataset(input_folder='dataset', output_folder='cleaned_dataset')
+        print

@@ -1,0 +1,3623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2cdda2d30516548c58052f6dc6da7b4c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2cdda2d30516548c58052f6dc6da7b4c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2cdda2d30516548c58052f6dc6da7b4c = L.map(
+                "map_2cdda2d30516548c58052f6dc6da7b4c",
+                {
+                    center: [52.0, 19.1],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9e5855ff36489e34f3620654f3798624 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9e5855ff36489e34f3620654f3798624.addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var marker_03174aef279c3a5b448baabd40fb1c42 = L.marker(
+                [52.41498, 22.56087],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0639064db57819e2b41f09def74af680 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e106ce6b4b957c9da755fd085441b2f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b1cdcd3e6b5041d9eee0a2c513450dad = $(`<div id="html_b1cdcd3e6b5041d9eee0a2c513450dad" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> FRANKOPOL<br><b>Rzeka:</b> BUG<br><b>Kraj:</b> PL</div>`)[0];
+                popup_e106ce6b4b957c9da755fd085441b2f8.setContent(html_b1cdcd3e6b5041d9eee0a2c513450dad);
+            
+        
+
+        marker_03174aef279c3a5b448baabd40fb1c42.bindPopup(popup_e106ce6b4b957c9da755fd085441b2f8)
+        ;
+
+        
+    
+    
+            marker_03174aef279c3a5b448baabd40fb1c42.bindTooltip(
+                `<div>
+                     FRANKOPOL (BUG)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03174aef279c3a5b448baabd40fb1c42.setIcon(icon_0639064db57819e2b41f09def74af680);
+            
+    
+            var marker_222518367e0bd579cc25c03dce7745fb = L.marker(
+                [52.10361111, 23.4675],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_e838bda19a501501d0501e11d47dda22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49f155c68d4f71d1c4e5fbb1b0001ed4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_089d80d285d86390bb7eb7d7f06f7975 = $(`<div id="html_089d80d285d86390bb7eb7d7f06f7975" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> MALOWA GORA<br><b>Rzeka:</b> KRZNA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_49f155c68d4f71d1c4e5fbb1b0001ed4.setContent(html_089d80d285d86390bb7eb7d7f06f7975);
+            
+        
+
+        marker_222518367e0bd579cc25c03dce7745fb.bindPopup(popup_49f155c68d4f71d1c4e5fbb1b0001ed4)
+        ;
+
+        
+    
+    
+            marker_222518367e0bd579cc25c03dce7745fb.bindTooltip(
+                `<div>
+                     MALOWA GORA (KRZNA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_222518367e0bd579cc25c03dce7745fb.setIcon(icon_e838bda19a501501d0501e11d47dda22);
+            
+    
+            var marker_9af4b3c3463d965f04fdef94c1a55891 = L.marker(
+                [51.5731, 22.00125],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_8d52e717a77a80016aba7240ccb467ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5db9f7d9e31f63252bcce9a65abf3c0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aeed3bac1f13257bf2e41d314e34d098 = $(`<div id="html_aeed3bac1f13257bf2e41d314e34d098" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KOSMIN<br><b>Rzeka:</b> WIEPRZ<br><b>Kraj:</b> PL</div>`)[0];
+                popup_f5db9f7d9e31f63252bcce9a65abf3c0.setContent(html_aeed3bac1f13257bf2e41d314e34d098);
+            
+        
+
+        marker_9af4b3c3463d965f04fdef94c1a55891.bindPopup(popup_f5db9f7d9e31f63252bcce9a65abf3c0)
+        ;
+
+        
+    
+    
+            marker_9af4b3c3463d965f04fdef94c1a55891.bindTooltip(
+                `<div>
+                     KOSMIN (WIEPRZ)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9af4b3c3463d965f04fdef94c1a55891.setIcon(icon_8d52e717a77a80016aba7240ccb467ce);
+            
+    
+            var marker_e3942e6095ab60f65bd8ae7cd7866462 = L.marker(
+                [49.3025, 22.57416667],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0f221ac1b84d70f842eea9b893b3bb1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc553d7c46b2737bb77f4defd0b97b0c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d1068f61182a8f7c21435a9f39c7506 = $(`<div id="html_5d1068f61182a8f7c21435a9f39c7506" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> POLANA<br><b>Rzeka:</b> CZARNY<br><b>Kraj:</b> PL</div>`)[0];
+                popup_bc553d7c46b2737bb77f4defd0b97b0c.setContent(html_5d1068f61182a8f7c21435a9f39c7506);
+            
+        
+
+        marker_e3942e6095ab60f65bd8ae7cd7866462.bindPopup(popup_bc553d7c46b2737bb77f4defd0b97b0c)
+        ;
+
+        
+    
+    
+            marker_e3942e6095ab60f65bd8ae7cd7866462.bindTooltip(
+                `<div>
+                     POLANA (CZARNY)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e3942e6095ab60f65bd8ae7cd7866462.setIcon(icon_0f221ac1b84d70f842eea9b893b3bb1e);
+            
+    
+            var marker_22893c6d0ebe89417fdfd2b1bd23a0ac = L.marker(
+                [49.54966, 20.56988],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_7e2d24dbb0cb792e9b9022b75682a801 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b59475a4a51225ae113d30a2190c89a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bad39e0d2c1f765b59e76b31ce0b4045 = $(`<div id="html_bad39e0d2c1f765b59e76b31ce0b4045" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> GOLKOWICE<br><b>Rzeka:</b> DUNAJEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_6b59475a4a51225ae113d30a2190c89a.setContent(html_bad39e0d2c1f765b59e76b31ce0b4045);
+            
+        
+
+        marker_22893c6d0ebe89417fdfd2b1bd23a0ac.bindPopup(popup_6b59475a4a51225ae113d30a2190c89a)
+        ;
+
+        
+    
+    
+            marker_22893c6d0ebe89417fdfd2b1bd23a0ac.bindTooltip(
+                `<div>
+                     GOLKOWICE (DUNAJEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22893c6d0ebe89417fdfd2b1bd23a0ac.setIcon(icon_7e2d24dbb0cb792e9b9022b75682a801);
+            
+    
+            var marker_7dbd49554613f18a9fead335c400e557 = L.marker(
+                [49.68055556, 18.85027778],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f32e0d05e26b11b95b6548a1692a4faa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_64cbf9038ed504f920d9437a76455989 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e99e5b4e9bb69174695805bb7ef9a418 = $(`<div id="html_e99e5b4e9bb69174695805bb7ef9a418" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> USTRON OBLAZIEC<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_64cbf9038ed504f920d9437a76455989.setContent(html_e99e5b4e9bb69174695805bb7ef9a418);
+            
+        
+
+        marker_7dbd49554613f18a9fead335c400e557.bindPopup(popup_64cbf9038ed504f920d9437a76455989)
+        ;
+
+        
+    
+    
+            marker_7dbd49554613f18a9fead335c400e557.bindTooltip(
+                `<div>
+                     USTRON OBLAZIEC (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dbd49554613f18a9fead335c400e557.setIcon(icon_f32e0d05e26b11b95b6548a1692a4faa);
+            
+    
+            var marker_1d17d1876001c852b1c754b6bfe73e61 = L.marker(
+                [50.16222222, 22.54722222],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_2ff7261d0a0962c9eeb6e0b14cbeca75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5305c6c543db29ba1a2525813f1bc68 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11f542e53056c3d08eb73a76e3067560 = $(`<div id="html_11f542e53056c3d08eb73a76e3067560" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> TRYNCZA<br><b>Rzeka:</b> WISLOK<br><b>Kraj:</b> PL</div>`)[0];
+                popup_d5305c6c543db29ba1a2525813f1bc68.setContent(html_11f542e53056c3d08eb73a76e3067560);
+            
+        
+
+        marker_1d17d1876001c852b1c754b6bfe73e61.bindPopup(popup_d5305c6c543db29ba1a2525813f1bc68)
+        ;
+
+        
+    
+    
+            marker_1d17d1876001c852b1c754b6bfe73e61.bindTooltip(
+                `<div>
+                     TRYNCZA (WISLOK)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d17d1876001c852b1c754b6bfe73e61.setIcon(icon_2ff7261d0a0962c9eeb6e0b14cbeca75);
+            
+    
+            var marker_e5e233483886af3abfeb51a35a803a46 = L.marker(
+                [53.2196, 22.53855],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_ba5faeb6ebe3b0379be1988b6e7ac183 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_043c2202559d24759f89250213730e34 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b16f8e8ce5db56b3152d095b56781e96 = $(`<div id="html_b16f8e8ce5db56b3152d095b56781e96" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> STREKOWA GORA<br><b>Rzeka:</b> NAREV<br><b>Kraj:</b> PL</div>`)[0];
+                popup_043c2202559d24759f89250213730e34.setContent(html_b16f8e8ce5db56b3152d095b56781e96);
+            
+        
+
+        marker_e5e233483886af3abfeb51a35a803a46.bindPopup(popup_043c2202559d24759f89250213730e34)
+        ;
+
+        
+    
+    
+            marker_e5e233483886af3abfeb51a35a803a46.bindTooltip(
+                `<div>
+                     STREKOWA GORA (NAREV)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e5e233483886af3abfeb51a35a803a46.setIcon(icon_ba5faeb6ebe3b0379be1988b6e7ac183);
+            
+    
+            var marker_24f4f55a34151b575c251e5b02171172 = L.marker(
+                [50.24697, 22.50195],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_fd4527a455e61fef7408189eb7dff9dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f4eab2d848c3e28a7715254d5456406 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0c052d84b0c645476a48409f50710486 = $(`<div id="html_0c052d84b0c645476a48409f50710486" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> RZUCHOW<br><b>Rzeka:</b> SAN<br><b>Kraj:</b> PL</div>`)[0];
+                popup_5f4eab2d848c3e28a7715254d5456406.setContent(html_0c052d84b0c645476a48409f50710486);
+            
+        
+
+        marker_24f4f55a34151b575c251e5b02171172.bindPopup(popup_5f4eab2d848c3e28a7715254d5456406)
+        ;
+
+        
+    
+    
+            marker_24f4f55a34151b575c251e5b02171172.bindTooltip(
+                `<div>
+                     RZUCHOW (SAN)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_24f4f55a34151b575c251e5b02171172.setIcon(icon_fd4527a455e61fef7408189eb7dff9dd);
+            
+    
+            var marker_1a8c14341c94e38fa502b9758a7cdee9 = L.marker(
+                [50.67361111, 21.93083333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_d36f8b517a8be70a53ca776b81694d2a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb9aa109ab899b2f973bb3c8c5980539 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b83f226d6afa3d066839b32e3733ff3 = $(`<div id="html_6b83f226d6afa3d066839b32e3733ff3" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> RADOMYSL NAD SANEM<br><b>Rzeka:</b> SAN<br><b>Kraj:</b> PL</div>`)[0];
+                popup_cb9aa109ab899b2f973bb3c8c5980539.setContent(html_6b83f226d6afa3d066839b32e3733ff3);
+            
+        
+
+        marker_1a8c14341c94e38fa502b9758a7cdee9.bindPopup(popup_cb9aa109ab899b2f973bb3c8c5980539)
+        ;
+
+        
+    
+    
+            marker_1a8c14341c94e38fa502b9758a7cdee9.bindTooltip(
+                `<div>
+                     RADOMYSL NAD SANEM (SAN)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1a8c14341c94e38fa502b9758a7cdee9.setIcon(icon_d36f8b517a8be70a53ca776b81694d2a);
+            
+    
+            var marker_09e4b1a84ab2cf38df9074f19a7931f0 = L.marker(
+                [51.55145, 23.56628],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_d0d6bab9faa9709459e788d788f7f656 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c89b3118bb769e3eebede77d31912c1d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_049fb5a6c56d096dd205453196230ade = $(`<div id="html_049fb5a6c56d096dd205453196230ade" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WLODAWA<br><b>Rzeka:</b> BUG<br><b>Kraj:</b> PL</div>`)[0];
+                popup_c89b3118bb769e3eebede77d31912c1d.setContent(html_049fb5a6c56d096dd205453196230ade);
+            
+        
+
+        marker_09e4b1a84ab2cf38df9074f19a7931f0.bindPopup(popup_c89b3118bb769e3eebede77d31912c1d)
+        ;
+
+        
+    
+    
+            marker_09e4b1a84ab2cf38df9074f19a7931f0.bindTooltip(
+                `<div>
+                     WLODAWA (BUG)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_09e4b1a84ab2cf38df9074f19a7931f0.setIcon(icon_d0d6bab9faa9709459e788d788f7f656);
+            
+    
+            var marker_5fbcf263cada443c52dccb903ad75bd5 = L.marker(
+                [52.18632, 21.10813],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_d46a0485f91152de7968849350051326 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_20dd8df5f31e0ddefb72ddfd715fb27f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_55cf9a13a92cf424faf7aa31325eafcf = $(`<div id="html_55cf9a13a92cf424faf7aa31325eafcf" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WARSZAWA-NADWILANOWKA<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_20dd8df5f31e0ddefb72ddfd715fb27f.setContent(html_55cf9a13a92cf424faf7aa31325eafcf);
+            
+        
+
+        marker_5fbcf263cada443c52dccb903ad75bd5.bindPopup(popup_20dd8df5f31e0ddefb72ddfd715fb27f)
+        ;
+
+        
+    
+    
+            marker_5fbcf263cada443c52dccb903ad75bd5.bindTooltip(
+                `<div>
+                     WARSZAWA-NADWILANOWKA (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5fbcf263cada443c52dccb903ad75bd5.setIcon(icon_d46a0485f91152de7968849350051326);
+            
+    
+            var marker_98aa78f33be64962ef77d6d528547a00 = L.marker(
+                [50.98527778, 23.17666667],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_2556e964bab2470ed2977672b460c7c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_77515d5a8e3ae8b7eb729daa29e31db0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6894258b6b86816b3bf5d877a8d8b89 = $(`<div id="html_b6894258b6b86816b3bf5d877a8d8b89" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KRASNYSTAW<br><b>Rzeka:</b> WIEPRZ<br><b>Kraj:</b> PL</div>`)[0];
+                popup_77515d5a8e3ae8b7eb729daa29e31db0.setContent(html_b6894258b6b86816b3bf5d877a8d8b89);
+            
+        
+
+        marker_98aa78f33be64962ef77d6d528547a00.bindPopup(popup_77515d5a8e3ae8b7eb729daa29e31db0)
+        ;
+
+        
+    
+    
+            marker_98aa78f33be64962ef77d6d528547a00.bindTooltip(
+                `<div>
+                     KRASNYSTAW (WIEPRZ)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_98aa78f33be64962ef77d6d528547a00.setIcon(icon_2556e964bab2470ed2977672b460c7c2);
+            
+    
+            var marker_549c35494ae9571e06f8a67f1f04aba6 = L.marker(
+                [50.6725, 21.74611111],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_406ec2817948a83dd935fd13c0defbb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c29bc6be0c2b16da1ec9bbca49dc8115 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_44d75606a532cbc3a0f28c2c7e43d7fe = $(`<div id="html_44d75606a532cbc3a0f28c2c7e43d7fe" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> SANDOMIERZ<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_c29bc6be0c2b16da1ec9bbca49dc8115.setContent(html_44d75606a532cbc3a0f28c2c7e43d7fe);
+            
+        
+
+        marker_549c35494ae9571e06f8a67f1f04aba6.bindPopup(popup_c29bc6be0c2b16da1ec9bbca49dc8115)
+        ;
+
+        
+    
+    
+            marker_549c35494ae9571e06f8a67f1f04aba6.bindTooltip(
+                `<div>
+                     SANDOMIERZ (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_549c35494ae9571e06f8a67f1f04aba6.setIcon(icon_406ec2817948a83dd935fd13c0defbb5);
+            
+    
+            var marker_92291613c3d979b58254d622b4df9784 = L.marker(
+                [52.43043, 20.65965],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_b647cab5fcf64f2ad5a42678632ac991 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3a88d4df9d80815d658cbfc09dbd015 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eed9cb8a8336a7ee263c5447d0c9c80c = $(`<div id="html_eed9cb8a8336a7ee263c5447d0c9c80c" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> MODLIN<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_a3a88d4df9d80815d658cbfc09dbd015.setContent(html_eed9cb8a8336a7ee263c5447d0c9c80c);
+            
+        
+
+        marker_92291613c3d979b58254d622b4df9784.bindPopup(popup_a3a88d4df9d80815d658cbfc09dbd015)
+        ;
+
+        
+    
+    
+            marker_92291613c3d979b58254d622b4df9784.bindTooltip(
+                `<div>
+                     MODLIN (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_92291613c3d979b58254d622b4df9784.setIcon(icon_b647cab5fcf64f2ad5a42678632ac991);
+            
+    
+            var marker_2d19e98c6f9111a0a4d738e897895068 = L.marker(
+                [49.68361111, 19.73916667],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_57a2a164161234f53c53a442721e8802 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_33208c5860f05ae9ac648b47131d8369 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e1e30dea1cac68229a0bf5d7e0cc804 = $(`<div id="html_3e1e30dea1cac68229a0bf5d7e0cc804" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> OSIELEC<br><b>Rzeka:</b> SKAWA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_33208c5860f05ae9ac648b47131d8369.setContent(html_3e1e30dea1cac68229a0bf5d7e0cc804);
+            
+        
+
+        marker_2d19e98c6f9111a0a4d738e897895068.bindPopup(popup_33208c5860f05ae9ac648b47131d8369)
+        ;
+
+        
+    
+    
+            marker_2d19e98c6f9111a0a4d738e897895068.bindTooltip(
+                `<div>
+                     OSIELEC (SKAWA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2d19e98c6f9111a0a4d738e897895068.setIcon(icon_57a2a164161234f53c53a442721e8802);
+            
+    
+            var marker_85a718400c84baa59fd7d9d88386d284 = L.marker(
+                [51.44528, 21.94551],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_ed0741c6a47775224f9dbf3cb10d1461 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a8cff2b88bfd9b1419a19f080c6b2044 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff1ea675817fe030a106568ad72c116a = $(`<div id="html_ff1ea675817fe030a106568ad72c116a" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PULAWY-AZOTY<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_a8cff2b88bfd9b1419a19f080c6b2044.setContent(html_ff1ea675817fe030a106568ad72c116a);
+            
+        
+
+        marker_85a718400c84baa59fd7d9d88386d284.bindPopup(popup_a8cff2b88bfd9b1419a19f080c6b2044)
+        ;
+
+        
+    
+    
+            marker_85a718400c84baa59fd7d9d88386d284.bindTooltip(
+                `<div>
+                     PULAWY-AZOTY (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_85a718400c84baa59fd7d9d88386d284.setIcon(icon_ed0741c6a47775224f9dbf3cb10d1461);
+            
+    
+            var marker_92331edc091a3030ed6d10309b44622c = L.marker(
+                [53.57305556, 17.90361111],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0677590cb30b7016011c912e229f5de2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd7e7eb2a27660351359e0913d6e3f9d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61d0ef31992f7fbe2221e229d3a5712b = $(`<div id="html_61d0ef31992f7fbe2221e229d3a5712b" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> TUCHOLA<br><b>Rzeka:</b> BRDA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_cd7e7eb2a27660351359e0913d6e3f9d.setContent(html_61d0ef31992f7fbe2221e229d3a5712b);
+            
+        
+
+        marker_92331edc091a3030ed6d10309b44622c.bindPopup(popup_cd7e7eb2a27660351359e0913d6e3f9d)
+        ;
+
+        
+    
+    
+            marker_92331edc091a3030ed6d10309b44622c.bindTooltip(
+                `<div>
+                     TUCHOLA (BRDA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_92331edc091a3030ed6d10309b44622c.setIcon(icon_0677590cb30b7016011c912e229f5de2);
+            
+    
+            var marker_761243053c6b052fa3638126ceefcfe1 = L.marker(
+                [49.63638889, 19.83],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_6777cc7e60446abd1781db14f35641f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af481fce95388ceb1eac8816840a79ab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2968d3465bbd46fde6a73cf908f1ce6 = $(`<div id="html_b2968d3465bbd46fde6a73cf908f1ce6" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> JORDANOW<br><b>Rzeka:</b> SKAWA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_af481fce95388ceb1eac8816840a79ab.setContent(html_b2968d3465bbd46fde6a73cf908f1ce6);
+            
+        
+
+        marker_761243053c6b052fa3638126ceefcfe1.bindPopup(popup_af481fce95388ceb1eac8816840a79ab)
+        ;
+
+        
+    
+    
+            marker_761243053c6b052fa3638126ceefcfe1.bindTooltip(
+                `<div>
+                     JORDANOW (SKAWA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_761243053c6b052fa3638126ceefcfe1.setIcon(icon_6777cc7e60446abd1781db14f35641f3);
+            
+    
+            var marker_6a3e6ee32b9abd06e23827794c696db1 = L.marker(
+                [51.65764, 20.95124],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_1a4055d5aa43dac67e67ee7a688243a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_516405d51070f323540a125f80dd35b0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a22e7cbdbc811e95db59148f8f6b2e30 = $(`<div id="html_a22e7cbdbc811e95db59148f8f6b2e30" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BIALOBRZEGI<br><b>Rzeka:</b> PILICA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_516405d51070f323540a125f80dd35b0.setContent(html_a22e7cbdbc811e95db59148f8f6b2e30);
+            
+        
+
+        marker_6a3e6ee32b9abd06e23827794c696db1.bindPopup(popup_516405d51070f323540a125f80dd35b0)
+        ;
+
+        
+    
+    
+            marker_6a3e6ee32b9abd06e23827794c696db1.bindTooltip(
+                `<div>
+                     BIALOBRZEGI (PILICA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6a3e6ee32b9abd06e23827794c696db1.setIcon(icon_1a4055d5aa43dac67e67ee7a688243a2);
+            
+    
+            var marker_1fb7c7e92929e9f4d9a8494a1dee5aef = L.marker(
+                [50.51407, 20.5202],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_c356c6a64ac1ca6eaf60d30c863cb07b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e04a7160d7a2c23d5172e6a44702f5bd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_484c424b09fb3ed4ba91143da2a5da33 = $(`<div id="html_484c424b09fb3ed4ba91143da2a5da33" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PINCZOW<br><b>Rzeka:</b> NIDA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_e04a7160d7a2c23d5172e6a44702f5bd.setContent(html_484c424b09fb3ed4ba91143da2a5da33);
+            
+        
+
+        marker_1fb7c7e92929e9f4d9a8494a1dee5aef.bindPopup(popup_e04a7160d7a2c23d5172e6a44702f5bd)
+        ;
+
+        
+    
+    
+            marker_1fb7c7e92929e9f4d9a8494a1dee5aef.bindTooltip(
+                `<div>
+                     PINCZOW (NIDA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1fb7c7e92929e9f4d9a8494a1dee5aef.setIcon(icon_c356c6a64ac1ca6eaf60d30c863cb07b);
+            
+    
+            var marker_bd4cb308a1545693f1c25118c4d6730f = L.marker(
+                [50.97888889, 21.24194444],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_e63167e4410455de51cbc7266b3b94b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_82aa0212057174ba9889e606731c4ba7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12e80dda3ee4e0aca0aab2db73d43531 = $(`<div id="html_12e80dda3ee4e0aca0aab2db73d43531" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> NIETULISKO DUZE<br><b>Rzeka:</b> SWISLINA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_82aa0212057174ba9889e606731c4ba7.setContent(html_12e80dda3ee4e0aca0aab2db73d43531);
+            
+        
+
+        marker_bd4cb308a1545693f1c25118c4d6730f.bindPopup(popup_82aa0212057174ba9889e606731c4ba7)
+        ;
+
+        
+    
+    
+            marker_bd4cb308a1545693f1c25118c4d6730f.bindTooltip(
+                `<div>
+                     NIETULISKO DUZE (SWISLINA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd4cb308a1545693f1c25118c4d6730f.setIcon(icon_e63167e4410455de51cbc7266b3b94b2);
+            
+    
+            var marker_dc2821a7eb497c04cc497291bd1d5335 = L.marker(
+                [50.67739, 24.06277],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_c749f8f4f358d33f741178d79074b9f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac443d6a1e75a2cf67a095c8264aff66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc3ff6b578c8cc9148030dad1e4a7e5e = $(`<div id="html_fc3ff6b578c8cc9148030dad1e4a7e5e" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KRYLOW<br><b>Rzeka:</b> BUG<br><b>Kraj:</b> PL</div>`)[0];
+                popup_ac443d6a1e75a2cf67a095c8264aff66.setContent(html_fc3ff6b578c8cc9148030dad1e4a7e5e);
+            
+        
+
+        marker_dc2821a7eb497c04cc497291bd1d5335.bindPopup(popup_ac443d6a1e75a2cf67a095c8264aff66)
+        ;
+
+        
+    
+    
+            marker_dc2821a7eb497c04cc497291bd1d5335.bindTooltip(
+                `<div>
+                     KRYLOW (BUG)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dc2821a7eb497c04cc497291bd1d5335.setIcon(icon_c749f8f4f358d33f741178d79074b9f4);
+            
+    
+            var marker_65a28f039399162f6d995fdadf4db69b = L.marker(
+                [51.08944444, 19.87527778],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_fa87ee28eb98f1f7b457a80f03bc86bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_34825afa22862f64f9c054539a7277db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_80bb613ae779a557e0a7e6b1a700627a = $(`<div id="html_80bb613ae779a557e0a7e6b1a700627a" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PRZEDBORZ<br><b>Rzeka:</b> PILICA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_34825afa22862f64f9c054539a7277db.setContent(html_80bb613ae779a557e0a7e6b1a700627a);
+            
+        
+
+        marker_65a28f039399162f6d995fdadf4db69b.bindPopup(popup_34825afa22862f64f9c054539a7277db)
+        ;
+
+        
+    
+    
+            marker_65a28f039399162f6d995fdadf4db69b.bindTooltip(
+                `<div>
+                     PRZEDBORZ (PILICA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_65a28f039399162f6d995fdadf4db69b.setIcon(icon_fa87ee28eb98f1f7b457a80f03bc86bc);
+            
+    
+            var marker_f705e5028ae82a9932bed4143a91a3d4 = L.marker(
+                [49.87722222, 19.51111111],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_82b2f663a2e5c1956595c6ddce898f8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_614cf765bd80351b5524041b1834c15b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_88aed00f6f24ca91cc9787813cd39540 = $(`<div id="html_88aed00f6f24ca91cc9787813cd39540" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WADOWICE<br><b>Rzeka:</b> SKAWA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_614cf765bd80351b5524041b1834c15b.setContent(html_88aed00f6f24ca91cc9787813cd39540);
+            
+        
+
+        marker_f705e5028ae82a9932bed4143a91a3d4.bindPopup(popup_614cf765bd80351b5524041b1834c15b)
+        ;
+
+        
+    
+    
+            marker_f705e5028ae82a9932bed4143a91a3d4.bindTooltip(
+                `<div>
+                     WADOWICE (SKAWA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f705e5028ae82a9932bed4143a91a3d4.setIcon(icon_82b2f663a2e5c1956595c6ddce898f8f);
+            
+    
+            var marker_283b58d1bf78f9c6e45aa24b6c1d3889 = L.marker(
+                [50.14037, 22.60311],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0ca5b36e23508002a1d6f99b306349f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2c4df2f459f436e312ce4d3172d1343c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42c26dcc4e52b808d712db6af7aeebb4 = $(`<div id="html_42c26dcc4e52b808d712db6af7aeebb4" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> LEZACHOW<br><b>Rzeka:</b> SAN<br><b>Kraj:</b> PL</div>`)[0];
+                popup_2c4df2f459f436e312ce4d3172d1343c.setContent(html_42c26dcc4e52b808d712db6af7aeebb4);
+            
+        
+
+        marker_283b58d1bf78f9c6e45aa24b6c1d3889.bindPopup(popup_2c4df2f459f436e312ce4d3172d1343c)
+        ;
+
+        
+    
+    
+            marker_283b58d1bf78f9c6e45aa24b6c1d3889.bindTooltip(
+                `<div>
+                     LEZACHOW (SAN)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_283b58d1bf78f9c6e45aa24b6c1d3889.setIcon(icon_0ca5b36e23508002a1d6f99b306349f6);
+            
+    
+            var marker_e800ef49c1c89b90cf74b61ae82abad0 = L.marker(
+                [50.80083333, 20.81305556],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0760ab1ff7d109afee857e9ef1608966 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5caea5926a9d1429a8c582bb7efa46fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ccf82c2beefcd2d72009fe3360dabb1a = $(`<div id="html_ccf82c2beefcd2d72009fe3360dabb1a" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> DALESZYCE<br><b>Rzeka:</b> CZARNA NIDA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_5caea5926a9d1429a8c582bb7efa46fd.setContent(html_ccf82c2beefcd2d72009fe3360dabb1a);
+            
+        
+
+        marker_e800ef49c1c89b90cf74b61ae82abad0.bindPopup(popup_5caea5926a9d1429a8c582bb7efa46fd)
+        ;
+
+        
+    
+    
+            marker_e800ef49c1c89b90cf74b61ae82abad0.bindTooltip(
+                `<div>
+                     DALESZYCE (CZARNA NIDA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e800ef49c1c89b90cf74b61ae82abad0.setIcon(icon_0760ab1ff7d109afee857e9ef1608966);
+            
+    
+            var marker_28b387846fba1cefbc4c345030350168 = L.marker(
+                [49.78481, 22.76735],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f61b5352466b6148b4026bb421a24181 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4bb82150c597ff0503d858d8305e4116 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b192ccbc2690d32eaa94a67a2f5a09be = $(`<div id="html_b192ccbc2690d32eaa94a67a2f5a09be" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PRZEMYSL<br><b>Rzeka:</b> SAN<br><b>Kraj:</b> PL</div>`)[0];
+                popup_4bb82150c597ff0503d858d8305e4116.setContent(html_b192ccbc2690d32eaa94a67a2f5a09be);
+            
+        
+
+        marker_28b387846fba1cefbc4c345030350168.bindPopup(popup_4bb82150c597ff0503d858d8305e4116)
+        ;
+
+        
+    
+    
+            marker_28b387846fba1cefbc4c345030350168.bindTooltip(
+                `<div>
+                     PRZEMYSL (SAN)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28b387846fba1cefbc4c345030350168.setIcon(icon_f61b5352466b6148b4026bb421a24181);
+            
+    
+            var marker_35c573177df7c7c627f008282a6365f0 = L.marker(
+                [52.43126, 19.96341],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_fc5bc629cc17741a37803ef8b6b4eb67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2158b3b811670428b49ee06daa06b214 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b862b97aa93f48bf7ef380ce923066d0 = $(`<div id="html_b862b97aa93f48bf7ef380ce923066d0" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KEPA POLSKA<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_2158b3b811670428b49ee06daa06b214.setContent(html_b862b97aa93f48bf7ef380ce923066d0);
+            
+        
+
+        marker_35c573177df7c7c627f008282a6365f0.bindPopup(popup_2158b3b811670428b49ee06daa06b214)
+        ;
+
+        
+    
+    
+            marker_35c573177df7c7c627f008282a6365f0.bindTooltip(
+                `<div>
+                     KEPA POLSKA (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_35c573177df7c7c627f008282a6365f0.setIcon(icon_fc5bc629cc17741a37803ef8b6b4eb67);
+            
+    
+            var marker_437ba802c4575b2b341b7da7974d0f83 = L.marker(
+                [53.38638889, 21.34083333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_78db39f8bb219a401b7dc28b67b7cb8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48fc379ae47c944cbccf9ec38d36b407 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e78fefdb4d85781ff4dcede0b4fc5d6b = $(`<div id="html_e78fefdb4d85781ff4dcede0b4fc5d6b" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> MYSZYNIEC<br><b>Rzeka:</b> ROZOGA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_48fc379ae47c944cbccf9ec38d36b407.setContent(html_e78fefdb4d85781ff4dcede0b4fc5d6b);
+            
+        
+
+        marker_437ba802c4575b2b341b7da7974d0f83.bindPopup(popup_48fc379ae47c944cbccf9ec38d36b407)
+        ;
+
+        
+    
+    
+            marker_437ba802c4575b2b341b7da7974d0f83.bindTooltip(
+                `<div>
+                     MYSZYNIEC (ROZOGA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_437ba802c4575b2b341b7da7974d0f83.setIcon(icon_78db39f8bb219a401b7dc28b67b7cb8f);
+            
+    
+            var marker_6501778e82a5ae6bed0940cea82248a3 = L.marker(
+                [51.49805556, 22.64361111],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_1e2076630b69921e8a68805c5d0d2b38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddf4b93b1f252191ae25b72345b9ae6b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78bea1df67a31192248ffacede831ceb = $(`<div id="html_78bea1df67a31192248ffacede831ceb" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> LUBARTOW<br><b>Rzeka:</b> WIEPRZ<br><b>Kraj:</b> PL</div>`)[0];
+                popup_ddf4b93b1f252191ae25b72345b9ae6b.setContent(html_78bea1df67a31192248ffacede831ceb);
+            
+        
+
+        marker_6501778e82a5ae6bed0940cea82248a3.bindPopup(popup_ddf4b93b1f252191ae25b72345b9ae6b)
+        ;
+
+        
+    
+    
+            marker_6501778e82a5ae6bed0940cea82248a3.bindTooltip(
+                `<div>
+                     LUBARTOW (WIEPRZ)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6501778e82a5ae6bed0940cea82248a3.setIcon(icon_1e2076630b69921e8a68805c5d0d2b38);
+            
+    
+            var marker_9796ea44184a2f17e05e0f9a6959eb23 = L.marker(
+                [51.30555556, 22.975],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_eb3fec114aa962380d8eeefca43ac9d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3574d1259ed6f183a61b4181097d8bb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0f427b5037da09878db2c2d6234929a = $(`<div id="html_b0f427b5037da09878db2c2d6234929a" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PUCHACZOW<br><b>Rzeka:</b> SWINKA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_3574d1259ed6f183a61b4181097d8bb2.setContent(html_b0f427b5037da09878db2c2d6234929a);
+            
+        
+
+        marker_9796ea44184a2f17e05e0f9a6959eb23.bindPopup(popup_3574d1259ed6f183a61b4181097d8bb2)
+        ;
+
+        
+    
+    
+            marker_9796ea44184a2f17e05e0f9a6959eb23.bindTooltip(
+                `<div>
+                     PUCHACZOW (SWINKA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9796ea44184a2f17e05e0f9a6959eb23.setIcon(icon_eb3fec114aa962380d8eeefca43ac9d1);
+            
+    
+            var marker_57f0cd1f2e7040b5974b3b8758b47821 = L.marker(
+                [53.28588, 21.86477],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_6adb459b85da5d06aec5d8dda9b44cd7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ea4ed27bf09a94bb63c7f0227d5d21f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_341d6df163599fc60e22c01ba992abee = $(`<div id="html_341d6df163599fc60e22c01ba992abee" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> DOBRYLAS<br><b>Rzeka:</b> PISA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_ea4ed27bf09a94bb63c7f0227d5d21f0.setContent(html_341d6df163599fc60e22c01ba992abee);
+            
+        
+
+        marker_57f0cd1f2e7040b5974b3b8758b47821.bindPopup(popup_ea4ed27bf09a94bb63c7f0227d5d21f0)
+        ;
+
+        
+    
+    
+            marker_57f0cd1f2e7040b5974b3b8758b47821.bindTooltip(
+                `<div>
+                     DOBRYLAS (PISA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_57f0cd1f2e7040b5974b3b8758b47821.setIcon(icon_6adb459b85da5d06aec5d8dda9b44cd7);
+            
+    
+            var marker_557eabe439fd3dddabd988ae85088014 = L.marker(
+                [49.48444444, 20.03111111],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_649219e67f3272cfa6ff3cb04abb7472 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce1cd93d11e54c0de1b7c68feaea8bf7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_934180054eb772ef6b105dfc14f9b4db = $(`<div id="html_934180054eb772ef6b105dfc14f9b4db" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> NOWY TARG<br><b>Rzeka:</b> DUNAJEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_ce1cd93d11e54c0de1b7c68feaea8bf7.setContent(html_934180054eb772ef6b105dfc14f9b4db);
+            
+        
+
+        marker_557eabe439fd3dddabd988ae85088014.bindPopup(popup_ce1cd93d11e54c0de1b7c68feaea8bf7)
+        ;
+
+        
+    
+    
+            marker_557eabe439fd3dddabd988ae85088014.bindTooltip(
+                `<div>
+                     NOWY TARG (DUNAJEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_557eabe439fd3dddabd988ae85088014.setIcon(icon_649219e67f3272cfa6ff3cb04abb7472);
+            
+    
+            var marker_e1c9857f06f455db34f8f186095d03ff = L.marker(
+                [52.58833333, 21.45277778],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_6dc80763577106e0481a8033618dad23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4479a49017d47188e0a1fb9efa33fb98 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_861accd0e5e3af9663f99059d36fef24 = $(`<div id="html_861accd0e5e3af9663f99059d36fef24" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WYSZKOW<br><b>Rzeka:</b> BUG<br><b>Kraj:</b> PL</div>`)[0];
+                popup_4479a49017d47188e0a1fb9efa33fb98.setContent(html_861accd0e5e3af9663f99059d36fef24);
+            
+        
+
+        marker_e1c9857f06f455db34f8f186095d03ff.bindPopup(popup_4479a49017d47188e0a1fb9efa33fb98)
+        ;
+
+        
+    
+    
+            marker_e1c9857f06f455db34f8f186095d03ff.bindTooltip(
+                `<div>
+                     WYSZKOW (BUG)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e1c9857f06f455db34f8f186095d03ff.setIcon(icon_6dc80763577106e0481a8033618dad23);
+            
+    
+            var marker_682eafcbb28360c4869ce7e8a125d99b = L.marker(
+                [49.62722222, 20.68722222],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_052746af422212c228ec1e8544ff4c7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00879dae9c88b95412b3a0df1a0e3605 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd298c97151d0fe379df6fc60880fe55 = $(`<div id="html_cd298c97151d0fe379df6fc60880fe55" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> NOWY SACZ<br><b>Rzeka:</b> DUNAJEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_00879dae9c88b95412b3a0df1a0e3605.setContent(html_cd298c97151d0fe379df6fc60880fe55);
+            
+        
+
+        marker_682eafcbb28360c4869ce7e8a125d99b.bindPopup(popup_00879dae9c88b95412b3a0df1a0e3605)
+        ;
+
+        
+    
+    
+            marker_682eafcbb28360c4869ce7e8a125d99b.bindTooltip(
+                `<div>
+                     NOWY SACZ (DUNAJEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_682eafcbb28360c4869ce7e8a125d99b.setIcon(icon_052746af422212c228ec1e8544ff4c7a);
+            
+    
+            var marker_6d110d1c028046b23dfa431839ac1ff5 = L.marker(
+                [53.19333, 22.09332],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_8f72c64ee55f95332579748aec9a37f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a661f03022f830e296bebd423703143f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e50a1ae4748b9f7eed7b6f4876982d4c = $(`<div id="html_e50a1ae4748b9f7eed7b6f4876982d4c" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PIATNICA-LOMZA<br><b>Rzeka:</b> NAREV<br><b>Kraj:</b> PL</div>`)[0];
+                popup_a661f03022f830e296bebd423703143f.setContent(html_e50a1ae4748b9f7eed7b6f4876982d4c);
+            
+        
+
+        marker_6d110d1c028046b23dfa431839ac1ff5.bindPopup(popup_a661f03022f830e296bebd423703143f)
+        ;
+
+        
+    
+    
+            marker_6d110d1c028046b23dfa431839ac1ff5.bindTooltip(
+                `<div>
+                     PIATNICA-LOMZA (NAREV)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d110d1c028046b23dfa431839ac1ff5.setIcon(icon_8f72c64ee55f95332579748aec9a37f9);
+            
+    
+            var marker_3cc61c7c19136d4078434bb0edae50e6 = L.marker(
+                [51.63544, 21.35872],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_5b7aa58fc50a95cc9bd9213afb9a23bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ebea2d80392803021e23d998bc3566f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_57a79b70d80929d6e0cc713713595fbb = $(`<div id="html_57a79b70d80929d6e0cc713713595fbb" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ROGOZEK<br><b>Rzeka:</b> RADOMKA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_4ebea2d80392803021e23d998bc3566f.setContent(html_57a79b70d80929d6e0cc713713595fbb);
+            
+        
+
+        marker_3cc61c7c19136d4078434bb0edae50e6.bindPopup(popup_4ebea2d80392803021e23d998bc3566f)
+        ;
+
+        
+    
+    
+            marker_3cc61c7c19136d4078434bb0edae50e6.bindTooltip(
+                `<div>
+                     ROGOZEK (RADOMKA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3cc61c7c19136d4078434bb0edae50e6.setIcon(icon_5b7aa58fc50a95cc9bd9213afb9a23bf);
+            
+    
+            var marker_512080c5803bb73fef7a0a39c0d0501e = L.marker(
+                [49.56856, 20.6596],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_c860af10efdfbe9a4d5fca3158e2e1e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e974b80e50363afb1bb7b68415ae0f61 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec98e606606ecccff62802af51953618 = $(`<div id="html_ec98e606606ecccff62802af51953618" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> STARY SACZ<br><b>Rzeka:</b> POPRAD<br><b>Kraj:</b> PL</div>`)[0];
+                popup_e974b80e50363afb1bb7b68415ae0f61.setContent(html_ec98e606606ecccff62802af51953618);
+            
+        
+
+        marker_512080c5803bb73fef7a0a39c0d0501e.bindPopup(popup_e974b80e50363afb1bb7b68415ae0f61)
+        ;
+
+        
+    
+    
+            marker_512080c5803bb73fef7a0a39c0d0501e.bindTooltip(
+                `<div>
+                     STARY SACZ (POPRAD)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_512080c5803bb73fef7a0a39c0d0501e.setIcon(icon_c860af10efdfbe9a4d5fca3158e2e1e8);
+            
+    
+            var marker_c625ee4ad0b2c7c4e775d9b4fc774c8c = L.marker(
+                [49.63194444, 18.90083333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_a1df1d15f6f8a1f73de9256f1977012c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9422a90fb4ce7b91da21123428177274 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ffda8bc5690f9f913bd770747c3a17f5 = $(`<div id="html_ffda8bc5690f9f913bd770747c3a17f5" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WISLA<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_9422a90fb4ce7b91da21123428177274.setContent(html_ffda8bc5690f9f913bd770747c3a17f5);
+            
+        
+
+        marker_c625ee4ad0b2c7c4e775d9b4fc774c8c.bindPopup(popup_9422a90fb4ce7b91da21123428177274)
+        ;
+
+        
+    
+    
+            marker_c625ee4ad0b2c7c4e775d9b4fc774c8c.bindTooltip(
+                `<div>
+                     WISLA (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c625ee4ad0b2c7c4e775d9b4fc774c8c.setIcon(icon_a1df1d15f6f8a1f73de9256f1977012c);
+            
+    
+            var marker_2be8aab81ef077185bc51400b6961821 = L.marker(
+                [52.94888889, 22.955],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f8cba72510527bf5be917682e20a5049 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b44ff653607bd0933a12dd82c510429d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f80a835b1971942df193b0fece35460f = $(`<div id="html_f80a835b1971942df193b0fece35460f" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> SURAZ<br><b>Rzeka:</b> NAREV<br><b>Kraj:</b> PL</div>`)[0];
+                popup_b44ff653607bd0933a12dd82c510429d.setContent(html_f80a835b1971942df193b0fece35460f);
+            
+        
+
+        marker_2be8aab81ef077185bc51400b6961821.bindPopup(popup_b44ff653607bd0933a12dd82c510429d)
+        ;
+
+        
+    
+    
+            marker_2be8aab81ef077185bc51400b6961821.bindTooltip(
+                `<div>
+                     SURAZ (NAREV)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2be8aab81ef077185bc51400b6961821.setIcon(icon_f8cba72510527bf5be917682e20a5049);
+            
+    
+            var marker_ed34261a0b1848b22f8a5ebf0de4ece0 = L.marker(
+                [52.75604, 21.20607],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_415b8edc518008bfafa6680ff5603a25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3dddf3ed631eeadb30dafc8ab1991c5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_54443ed76df6474e52225551c8025326 = $(`<div id="html_54443ed76df6474e52225551c8025326" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ZAMBSKI KOSCIELNE<br><b>Rzeka:</b> NAREV<br><b>Kraj:</b> PL</div>`)[0];
+                popup_a3dddf3ed631eeadb30dafc8ab1991c5.setContent(html_54443ed76df6474e52225551c8025326);
+            
+        
+
+        marker_ed34261a0b1848b22f8a5ebf0de4ece0.bindPopup(popup_a3dddf3ed631eeadb30dafc8ab1991c5)
+        ;
+
+        
+    
+    
+            marker_ed34261a0b1848b22f8a5ebf0de4ece0.bindTooltip(
+                `<div>
+                     ZAMBSKI KOSCIELNE (NAREV)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed34261a0b1848b22f8a5ebf0de4ece0.setIcon(icon_415b8edc518008bfafa6680ff5603a25);
+            
+    
+            var marker_0f427c2f6505271539ca4d67809402f6 = L.marker(
+                [50.47747, 22.47392],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_060a6ff53ec9309fb65c245d8dbbd81e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_abe148b9dffa753f58592846effa283d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_302811123e857333872ab43c86a9dfb7 = $(`<div id="html_302811123e857333872ab43c86a9dfb7" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> HARASIUKI<br><b>Rzeka:</b> TANEW<br><b>Kraj:</b> PL</div>`)[0];
+                popup_abe148b9dffa753f58592846effa283d.setContent(html_302811123e857333872ab43c86a9dfb7);
+            
+        
+
+        marker_0f427c2f6505271539ca4d67809402f6.bindPopup(popup_abe148b9dffa753f58592846effa283d)
+        ;
+
+        
+    
+    
+            marker_0f427c2f6505271539ca4d67809402f6.bindTooltip(
+                `<div>
+                     HARASIUKI (TANEW)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f427c2f6505271539ca4d67809402f6.setIcon(icon_060a6ff53ec9309fb65c245d8dbbd81e);
+            
+    
+            var marker_44f1e6d9cfc205c07369b5366f3382bc = L.marker(
+                [50.27497, 20.77481],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_7fd4a56ba2ab19407c80376ccc8e9060 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2aaa8c0b7de3437d42c4517578801d41 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c747a39b13decc64c8f9afbf94770308 = $(`<div id="html_c747a39b13decc64c8f9afbf94770308" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KARSY<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_2aaa8c0b7de3437d42c4517578801d41.setContent(html_c747a39b13decc64c8f9afbf94770308);
+            
+        
+
+        marker_44f1e6d9cfc205c07369b5366f3382bc.bindPopup(popup_2aaa8c0b7de3437d42c4517578801d41)
+        ;
+
+        
+    
+    
+            marker_44f1e6d9cfc205c07369b5366f3382bc.bindTooltip(
+                `<div>
+                     KARSY (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44f1e6d9cfc205c07369b5366f3382bc.setIcon(icon_7fd4a56ba2ab19407c80376ccc8e9060);
+            
+    
+            var marker_b74653db21749555ef97d914fda8a97b = L.marker(
+                [49.31611111, 19.9775],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f1ebcc7f4c08ce97622ad2914018dcc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_633c6a003fd2fc50e838418db13b85c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1f1595cfeabab1f2c19eaf18fa6bb4cf = $(`<div id="html_1f1595cfeabab1f2c19eaf18fa6bb4cf" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ZAKOPANE  HARENDA<br><b>Rzeka:</b> BIALY DUNAJEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_633c6a003fd2fc50e838418db13b85c1.setContent(html_1f1595cfeabab1f2c19eaf18fa6bb4cf);
+            
+        
+
+        marker_b74653db21749555ef97d914fda8a97b.bindPopup(popup_633c6a003fd2fc50e838418db13b85c1)
+        ;
+
+        
+    
+    
+            marker_b74653db21749555ef97d914fda8a97b.bindTooltip(
+                `<div>
+                     ZAKOPANE  HARENDA (BIALY DUNAJEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b74653db21749555ef97d914fda8a97b.setIcon(icon_f1ebcc7f4c08ce97622ad2914018dcc2);
+            
+    
+            var marker_aacad73ae28291a2e320c9ee3ac2648d = L.marker(
+                [50.279, 21.43037],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f5a1ee54a7bbf36a00bad67d5bcd50b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1ecf84f5cd550efe88e011aa37fe598 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_acc5dc92a42c04bf87d2be93a80169a7 = $(`<div id="html_acc5dc92a42c04bf87d2be93a80169a7" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> MIELEC 2<br><b>Rzeka:</b> WISLOKA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_b1ecf84f5cd550efe88e011aa37fe598.setContent(html_acc5dc92a42c04bf87d2be93a80169a7);
+            
+        
+
+        marker_aacad73ae28291a2e320c9ee3ac2648d.bindPopup(popup_b1ecf84f5cd550efe88e011aa37fe598)
+        ;
+
+        
+    
+    
+            marker_aacad73ae28291a2e320c9ee3ac2648d.bindTooltip(
+                `<div>
+                     MIELEC 2 (WISLOKA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aacad73ae28291a2e320c9ee3ac2648d.setIcon(icon_f5a1ee54a7bbf36a00bad67d5bcd50b6);
+            
+    
+            var marker_77f4b803a7aa81b52c63cfb74411ea0a = L.marker(
+                [50.19472222, 19.8325],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_dd37c46300687e5c145469c4d79224ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9910fb9b7e134a1d5ddfef359e4794c0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_795602eaa17585024dc318b1fbdfe795 = $(`<div id="html_795602eaa17585024dc318b1fbdfe795" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> OJCOW<br><b>Rzeka:</b> PRADNIK<br><b>Kraj:</b> PL</div>`)[0];
+                popup_9910fb9b7e134a1d5ddfef359e4794c0.setContent(html_795602eaa17585024dc318b1fbdfe795);
+            
+        
+
+        marker_77f4b803a7aa81b52c63cfb74411ea0a.bindPopup(popup_9910fb9b7e134a1d5ddfef359e4794c0)
+        ;
+
+        
+    
+    
+            marker_77f4b803a7aa81b52c63cfb74411ea0a.bindTooltip(
+                `<div>
+                     OJCOW (PRADNIK)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77f4b803a7aa81b52c63cfb74411ea0a.setIcon(icon_dd37c46300687e5c145469c4d79224ef);
+            
+    
+            var marker_bf93dc7773cd1cbaa0023a9d9171f93c = L.marker(
+                [49.51388889, 19.11638889],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_3f21f87c54c2faa7164a823da60adfd3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_071a33cf6aa6365ccb5961c907a2b355 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc82d4c86f8329f4930f5507ac8059d2 = $(`<div id="html_dc82d4c86f8329f4930f5507ac8059d2" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> RAJCZA<br><b>Rzeka:</b> SOLA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_071a33cf6aa6365ccb5961c907a2b355.setContent(html_dc82d4c86f8329f4930f5507ac8059d2);
+            
+        
+
+        marker_bf93dc7773cd1cbaa0023a9d9171f93c.bindPopup(popup_071a33cf6aa6365ccb5961c907a2b355)
+        ;
+
+        
+    
+    
+            marker_bf93dc7773cd1cbaa0023a9d9171f93c.bindTooltip(
+                `<div>
+                     RAJCZA (SOLA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf93dc7773cd1cbaa0023a9d9171f93c.setIcon(icon_3f21f87c54c2faa7164a823da60adfd3);
+            
+    
+            var marker_78bd41d5224f0917eb599d5d50fd8552 = L.marker(
+                [50.32694444, 21.07722222],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_67fbf782f38b347dd48d0f9f5a6474a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec310d52bf02e206d559074475b0b847 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_48d8b294b9c68bb892cb6fcccf3d5e41 = $(`<div id="html_48d8b294b9c68bb892cb6fcccf3d5e41" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> SZCZUCIN<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_ec310d52bf02e206d559074475b0b847.setContent(html_48d8b294b9c68bb892cb6fcccf3d5e41);
+            
+        
+
+        marker_78bd41d5224f0917eb599d5d50fd8552.bindPopup(popup_ec310d52bf02e206d559074475b0b847)
+        ;
+
+        
+    
+    
+            marker_78bd41d5224f0917eb599d5d50fd8552.bindTooltip(
+                `<div>
+                     SZCZUCIN (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_78bd41d5224f0917eb599d5d50fd8552.setIcon(icon_67fbf782f38b347dd48d0f9f5a6474a2);
+            
+    
+            var marker_0e2bb0d147fc681d4932489f7e1b75b6 = L.marker(
+                [52.66317, 19.0693],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_37666b2bfb314d5ee80ba47504706a91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0275f422f6d39f8f602d8b2e239dddd2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61f9867de1f660548a3f518781d80f2c = $(`<div id="html_61f9867de1f660548a3f518781d80f2c" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> WLOCLAWEK<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_0275f422f6d39f8f602d8b2e239dddd2.setContent(html_61f9867de1f660548a3f518781d80f2c);
+            
+        
+
+        marker_0e2bb0d147fc681d4932489f7e1b75b6.bindPopup(popup_0275f422f6d39f8f602d8b2e239dddd2)
+        ;
+
+        
+    
+    
+            marker_0e2bb0d147fc681d4932489f7e1b75b6.bindTooltip(
+                `<div>
+                     WLOCLAWEK (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0e2bb0d147fc681d4932489f7e1b75b6.setIcon(icon_37666b2bfb314d5ee80ba47504706a91);
+            
+    
+            var marker_03a9727e1a3c5abc5f2382e2c9f001db = L.marker(
+                [49.21305556, 22.33333333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_3f8e4a250feaffd66683807099f27993 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f8b13f3755828dba0062d8c538d05387 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35f31f804e581f940be65af154a8f323 = $(`<div id="html_35f31f804e581f940be65af154a8f323" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> CISNA<br><b>Rzeka:</b> SOLINKA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_f8b13f3755828dba0062d8c538d05387.setContent(html_35f31f804e581f940be65af154a8f323);
+            
+        
+
+        marker_03a9727e1a3c5abc5f2382e2c9f001db.bindPopup(popup_f8b13f3755828dba0062d8c538d05387)
+        ;
+
+        
+    
+    
+            marker_03a9727e1a3c5abc5f2382e2c9f001db.bindTooltip(
+                `<div>
+                     CISNA (SOLINKA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03a9727e1a3c5abc5f2382e2c9f001db.setIcon(icon_3f8e4a250feaffd66683807099f27993);
+            
+    
+            var marker_febff321d2792dfdb4b0fe81db7ee36d = L.marker(
+                [52.51, 21.67833333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_b61423a18af95f6dd3add654672197dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8a4101cccdb07faf6fec66e93bc1fa4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c83b55b344f86aa205fbbe66b6a6385 = $(`<div id="html_9c83b55b344f86aa205fbbe66b6a6385" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> LOCHOW<br><b>Rzeka:</b> LIWIEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_d8a4101cccdb07faf6fec66e93bc1fa4.setContent(html_9c83b55b344f86aa205fbbe66b6a6385);
+            
+        
+
+        marker_febff321d2792dfdb4b0fe81db7ee36d.bindPopup(popup_d8a4101cccdb07faf6fec66e93bc1fa4)
+        ;
+
+        
+    
+    
+            marker_febff321d2792dfdb4b0fe81db7ee36d.bindTooltip(
+                `<div>
+                     LOCHOW (LIWIEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_febff321d2792dfdb4b0fe81db7ee36d.setIcon(icon_b61423a18af95f6dd3add654672197dc);
+            
+    
+            var marker_c4328b31805f75400830ed3350564d79 = L.marker(
+                [53.06088, 18.92824],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_ff4bc03c6b576cab1a5d8ffeb783b01b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d5a51077befe8624344f0d353903781 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8c7fbd30f213368b5727c70d1cac489e = $(`<div id="html_8c7fbd30f213368b5727c70d1cac489e" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ELGISZEWO<br><b>Rzeka:</b> DRWECA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_9d5a51077befe8624344f0d353903781.setContent(html_8c7fbd30f213368b5727c70d1cac489e);
+            
+        
+
+        marker_c4328b31805f75400830ed3350564d79.bindPopup(popup_9d5a51077befe8624344f0d353903781)
+        ;
+
+        
+    
+    
+            marker_c4328b31805f75400830ed3350564d79.bindTooltip(
+                `<div>
+                     ELGISZEWO (DRWECA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c4328b31805f75400830ed3350564d79.setIcon(icon_ff4bc03c6b576cab1a5d8ffeb783b01b);
+            
+    
+            var marker_ed6db747436202b8b0ed83fc3249754e = L.marker(
+                [54.08722222, 18.80555556],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_1649300569f85c9c34bcc74d51fa939b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f1dc155a63b472f5cabbefc7963cc8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93f59176e9bb7a330087f6e147e3efac = $(`<div id="html_93f59176e9bb7a330087f6e147e3efac" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> TCZEW<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_6f1dc155a63b472f5cabbefc7963cc8d.setContent(html_93f59176e9bb7a330087f6e147e3efac);
+            
+        
+
+        marker_ed6db747436202b8b0ed83fc3249754e.bindPopup(popup_6f1dc155a63b472f5cabbefc7963cc8d)
+        ;
+
+        
+    
+    
+            marker_ed6db747436202b8b0ed83fc3249754e.bindTooltip(
+                `<div>
+                     TCZEW (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed6db747436202b8b0ed83fc3249754e.setIcon(icon_1649300569f85c9c34bcc74d51fa939b);
+            
+    
+            var marker_6c2ed6710d1a0ecec8aae5f011249c08 = L.marker(
+                [52.10972222, 19.9625],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0a4f3918991f54b2a4f4b332f05d4477 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48fb8776306684bb94c04281067fb727 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1a782613b0c7339fed90b98f849a844a = $(`<div id="html_1a782613b0c7339fed90b98f849a844a" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> LOWICZ<br><b>Rzeka:</b> BZURA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_48fb8776306684bb94c04281067fb727.setContent(html_1a782613b0c7339fed90b98f849a844a);
+            
+        
+
+        marker_6c2ed6710d1a0ecec8aae5f011249c08.bindPopup(popup_48fb8776306684bb94c04281067fb727)
+        ;
+
+        
+    
+    
+            marker_6c2ed6710d1a0ecec8aae5f011249c08.bindTooltip(
+                `<div>
+                     LOWICZ (BZURA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c2ed6710d1a0ecec8aae5f011249c08.setIcon(icon_0a4f3918991f54b2a4f4b332f05d4477);
+            
+    
+            var marker_02ad30232db993afb43e0bf903247c04 = L.marker(
+                [50.13183, 20.86198],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_a2599654836df6db0f05604efe476631 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f137dc535484a819223e29efa428a47 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa6cb63cbf5b509f25d270ac97935650 = $(`<div id="html_aa6cb63cbf5b509f25d270ac97935650" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ZABNO<br><b>Rzeka:</b> DUNAJEC<br><b>Kraj:</b> PL</div>`)[0];
+                popup_0f137dc535484a819223e29efa428a47.setContent(html_aa6cb63cbf5b509f25d270ac97935650);
+            
+        
+
+        marker_02ad30232db993afb43e0bf903247c04.bindPopup(popup_0f137dc535484a819223e29efa428a47)
+        ;
+
+        
+    
+    
+            marker_02ad30232db993afb43e0bf903247c04.bindTooltip(
+                `<div>
+                     ZABNO (DUNAJEC)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_02ad30232db993afb43e0bf903247c04.setIcon(icon_a2599654836df6db0f05604efe476631);
+            
+    
+            var marker_66e889f815f1a15d7302cb7dfc927871 = L.marker(
+                [49.28918, 20.73023],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_199866d0f224bdb75d13f2e5ab25db86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae9e406232878421ee53540ff7e4ca78 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9de0699fbe69fe74990f77635ab5fbe8 = $(`<div id="html_9de0699fbe69fe74990f77635ab5fbe8" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> CHMELNICA<br><b>Rzeka:</b> POPRAD<br><b>Kraj:</b> SK</div>`)[0];
+                popup_ae9e406232878421ee53540ff7e4ca78.setContent(html_9de0699fbe69fe74990f77635ab5fbe8);
+            
+        
+
+        marker_66e889f815f1a15d7302cb7dfc927871.bindPopup(popup_ae9e406232878421ee53540ff7e4ca78)
+        ;
+
+        
+    
+    
+            marker_66e889f815f1a15d7302cb7dfc927871.bindTooltip(
+                `<div>
+                     CHMELNICA (POPRAD)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_66e889f815f1a15d7302cb7dfc927871.setIcon(icon_199866d0f224bdb75d13f2e5ab25db86);
+            
+    
+            var marker_06ad532ba17dc27f1ba30e6ddf1a2313 = L.marker(
+                [50.74194444, 20.41388889],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_2aabe5669d0eca71de15e6766e25665b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50c778c98570d724ce6a38ac746fd870 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50d53d4e45a34f8ddafe222132421094 = $(`<div id="html_50d53d4e45a34f8ddafe222132421094" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BRZEGI<br><b>Rzeka:</b> NIDA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_50c778c98570d724ce6a38ac746fd870.setContent(html_50d53d4e45a34f8ddafe222132421094);
+            
+        
+
+        marker_06ad532ba17dc27f1ba30e6ddf1a2313.bindPopup(popup_50c778c98570d724ce6a38ac746fd870)
+        ;
+
+        
+    
+    
+            marker_06ad532ba17dc27f1ba30e6ddf1a2313.bindTooltip(
+                `<div>
+                     BRZEGI (NIDA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06ad532ba17dc27f1ba30e6ddf1a2313.setIcon(icon_2aabe5669d0eca71de15e6766e25665b);
+            
+    
+            var marker_3d50e9bd0676f9db658c441ae6204f4e = L.marker(
+                [53.27421, 22.45918],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_0016d695754abe39286096b49f61412e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_39192514cdf599f31277b3b7db417f77 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3bccfe5343f2ce1ed423a393b27c0855 = $(`<div id="html_3bccfe5343f2ce1ed423a393b27c0855" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BURZYN<br><b>Rzeka:</b> BIEBRZA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_39192514cdf599f31277b3b7db417f77.setContent(html_3bccfe5343f2ce1ed423a393b27c0855);
+            
+        
+
+        marker_3d50e9bd0676f9db658c441ae6204f4e.bindPopup(popup_39192514cdf599f31277b3b7db417f77)
+        ;
+
+        
+    
+    
+            marker_3d50e9bd0676f9db658c441ae6204f4e.bindTooltip(
+                `<div>
+                     BURZYN (BIEBRZA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d50e9bd0676f9db658c441ae6204f4e.setIcon(icon_0016d695754abe39286096b49f61412e);
+            
+    
+            var marker_00d4ce2ec077051bf2ff6b6f583f78ab = L.marker(
+                [53.39305556, 21.7925],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_e782a383c21ee082912fe2a713ceef0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3177203623c2c4e9c1e7dcb62b937ca4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_35c26e1df66bc4c1cf18fdf0694db066 = $(`<div id="html_35c26e1df66bc4c1cf18fdf0694db066" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> PTAKI<br><b>Rzeka:</b> PISA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_3177203623c2c4e9c1e7dcb62b937ca4.setContent(html_35c26e1df66bc4c1cf18fdf0694db066);
+            
+        
+
+        marker_00d4ce2ec077051bf2ff6b6f583f78ab.bindPopup(popup_3177203623c2c4e9c1e7dcb62b937ca4)
+        ;
+
+        
+    
+    
+            marker_00d4ce2ec077051bf2ff6b6f583f78ab.bindTooltip(
+                `<div>
+                     PTAKI (PISA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00d4ce2ec077051bf2ff6b6f583f78ab.setIcon(icon_e782a383c21ee082912fe2a713ceef0e);
+            
+    
+            var marker_a6d9b6abb874539a316d37e294cabefd = L.marker(
+                [51.67913, 22.55624],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_3bcff738abdef73dcb306752df8347c6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_38f056234d1e6439e12f1329a45f5aaa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_267432a383d1e10502da02441f635cef = $(`<div id="html_267432a383d1e10502da02441f635cef" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> TCHORZEW<br><b>Rzeka:</b> TYSMIENICA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_38f056234d1e6439e12f1329a45f5aaa.setContent(html_267432a383d1e10502da02441f635cef);
+            
+        
+
+        marker_a6d9b6abb874539a316d37e294cabefd.bindPopup(popup_38f056234d1e6439e12f1329a45f5aaa)
+        ;
+
+        
+    
+    
+            marker_a6d9b6abb874539a316d37e294cabefd.bindTooltip(
+                `<div>
+                     TCHORZEW (TYSMIENICA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a6d9b6abb874539a316d37e294cabefd.setIcon(icon_3bcff738abdef73dcb306752df8347c6);
+            
+    
+            var marker_989a0d22645df295566951f6e7cd62ab = L.marker(
+                [50.20049, 20.68196],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_034aaac16b539717f30d3dc413e7f8dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7867cacc0d09b5b9c22e1b7fd69fda97 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b365d75eeff5e49897452c89b3c9eed7 = $(`<div id="html_b365d75eeff5e49897452c89b3c9eed7" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> JAGODNIKI<br><b>Rzeka:</b> VISTULA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_7867cacc0d09b5b9c22e1b7fd69fda97.setContent(html_b365d75eeff5e49897452c89b3c9eed7);
+            
+        
+
+        marker_989a0d22645df295566951f6e7cd62ab.bindPopup(popup_7867cacc0d09b5b9c22e1b7fd69fda97)
+        ;
+
+        
+    
+    
+            marker_989a0d22645df295566951f6e7cd62ab.bindTooltip(
+                `<div>
+                     JAGODNIKI (VISTULA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_989a0d22645df295566951f6e7cd62ab.setIcon(icon_034aaac16b539717f30d3dc413e7f8dc);
+            
+    
+            var marker_3a3785fe38cca959e2adddba0404737e = L.marker(
+                [52.56168, 20.6656],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_7fc4a23c98cf66c43c04c89fd2b01aaf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23f542fd21f943d309f098ac66913993 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be23644eea3ebb702e4e80a69536a2e2 = $(`<div id="html_be23644eea3ebb702e4e80a69536a2e2" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BORKOWO<br><b>Rzeka:</b> WKRA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_23f542fd21f943d309f098ac66913993.setContent(html_be23644eea3ebb702e4e80a69536a2e2);
+            
+        
+
+        marker_3a3785fe38cca959e2adddba0404737e.bindPopup(popup_23f542fd21f943d309f098ac66913993)
+        ;
+
+        
+    
+    
+            marker_3a3785fe38cca959e2adddba0404737e.bindTooltip(
+                `<div>
+                     BORKOWO (WKRA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3a3785fe38cca959e2adddba0404737e.setIcon(icon_7fc4a23c98cf66c43c04c89fd2b01aaf);
+            
+    
+            var marker_8e90231bd5e32aa265a3a967d5dfb0ac = L.marker(
+                [53.16027778, 23.10666667],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_d3a26daa71e3f1487fc04a2a98fb4c84 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e673df820de172d5b4019c5de5d48e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_892c1ec6fadc6e986db223d2e4575572 = $(`<div id="html_892c1ec6fadc6e986db223d2e4575572" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> ZAWADY<br><b>Rzeka:</b> BIALA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_4e673df820de172d5b4019c5de5d48e3.setContent(html_892c1ec6fadc6e986db223d2e4575572);
+            
+        
+
+        marker_8e90231bd5e32aa265a3a967d5dfb0ac.bindPopup(popup_4e673df820de172d5b4019c5de5d48e3)
+        ;
+
+        
+    
+    
+            marker_8e90231bd5e32aa265a3a967d5dfb0ac.bindTooltip(
+                `<div>
+                     ZAWADY (BIALA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8e90231bd5e32aa265a3a967d5dfb0ac.setIcon(icon_d3a26daa71e3f1487fc04a2a98fb4c84);
+            
+    
+            var marker_d143c35451518a8d34d235427930be05 = L.marker(
+                [53.25527778, 19.40083333],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_9b47dc83a219933bd80ed06350c6aba8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3f2498697ec4eda2769b063f5c4874b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa7cd3d1f3aa4039f527564ff103c6d0 = $(`<div id="html_fa7cd3d1f3aa4039f527564ff103c6d0" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BRODNICA<br><b>Rzeka:</b> DRWECA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_3f2498697ec4eda2769b063f5c4874b4.setContent(html_fa7cd3d1f3aa4039f527564ff103c6d0);
+            
+        
+
+        marker_d143c35451518a8d34d235427930be05.bindPopup(popup_3f2498697ec4eda2769b063f5c4874b4)
+        ;
+
+        
+    
+    
+            marker_d143c35451518a8d34d235427930be05.bindTooltip(
+                `<div>
+                     BRODNICA (DRWECA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d143c35451518a8d34d235427930be05.setIcon(icon_9b47dc83a219933bd80ed06350c6aba8);
+            
+    
+            var marker_a03a8efc2c33434bb5ba6e6d3a906c0d = L.marker(
+                [50.1611, 19.23964],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_f4ed29dedd5829a5c3d58ab495cfb881 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c706feca5979d1dce772681c086bda92 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4fe89865cca3c21017167d481e7a367d = $(`<div id="html_4fe89865cca3c21017167d481e7a367d" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> JELEN<br><b>Rzeka:</b> PRZEMSZA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_c706feca5979d1dce772681c086bda92.setContent(html_4fe89865cca3c21017167d481e7a367d);
+            
+        
+
+        marker_a03a8efc2c33434bb5ba6e6d3a906c0d.bindPopup(popup_c706feca5979d1dce772681c086bda92)
+        ;
+
+        
+    
+    
+            marker_a03a8efc2c33434bb5ba6e6d3a906c0d.bindTooltip(
+                `<div>
+                     JELEN (PRZEMSZA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a03a8efc2c33434bb5ba6e6d3a906c0d.setIcon(icon_f4ed29dedd5829a5c3d58ab495cfb881);
+            
+    
+            var marker_5c324a45a5c93a6deee1e50010508f65 = L.marker(
+                [53.08388889, 21.56277778],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_dcc4ddbd59fcafef528643b23712a896 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ca06eabab2b97d3fd95c6258643d448 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b5a2ec5f0279355ae8ad23d90328ac0 = $(`<div id="html_7b5a2ec5f0279355ae8ad23d90328ac0" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> OSTROLEKA<br><b>Rzeka:</b> NAREV<br><b>Kraj:</b> PL</div>`)[0];
+                popup_4ca06eabab2b97d3fd95c6258643d448.setContent(html_7b5a2ec5f0279355ae8ad23d90328ac0);
+            
+        
+
+        marker_5c324a45a5c93a6deee1e50010508f65.bindPopup(popup_4ca06eabab2b97d3fd95c6258643d448)
+        ;
+
+        
+    
+    
+            marker_5c324a45a5c93a6deee1e50010508f65.bindTooltip(
+                `<div>
+                     OSTROLEKA (NAREV)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5c324a45a5c93a6deee1e50010508f65.setIcon(icon_dcc4ddbd59fcafef528643b23712a896);
+            
+    
+            var marker_e2ddf8778dadfd6b53593fb827f7c250 = L.marker(
+                [50.8025, 20.31166667],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_45e375b5eeeaddcd4364a45e5d229fb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10e26e868633922c1bbecf6a41051a35 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b93d06c43dc837de9cbbf2fe4dc48130 = $(`<div id="html_b93d06c43dc837de9cbbf2fe4dc48130" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> BOCHENIEC<br><b>Rzeka:</b> LOSOSNA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_10e26e868633922c1bbecf6a41051a35.setContent(html_b93d06c43dc837de9cbbf2fe4dc48130);
+            
+        
+
+        marker_e2ddf8778dadfd6b53593fb827f7c250.bindPopup(popup_10e26e868633922c1bbecf6a41051a35)
+        ;
+
+        
+    
+    
+            marker_e2ddf8778dadfd6b53593fb827f7c250.bindTooltip(
+                `<div>
+                     BOCHENIEC (LOSOSNA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e2ddf8778dadfd6b53593fb827f7c250.setIcon(icon_45e375b5eeeaddcd4364a45e5d229fb1);
+            
+    
+            var marker_038da0b4d0822b686da2b7298e3f8b31 = L.marker(
+                [50.96194444, 21.27888889],
+                {
+}
+            ).addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+            var icon_262d7070638d7554e3c18c3886efb08a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b00575c750fd1b3b3181f7ffaed7768e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cd385bd8fa1cdf6bc76ca09b4466a33e = $(`<div id="html_cd385bd8fa1cdf6bc76ca09b4466a33e" style="width: 100.0%; height: 100.0%;"><b>Stacja:</b> KUNOW<br><b>Rzeka:</b> KAMIENNA<br><b>Kraj:</b> PL</div>`)[0];
+                popup_b00575c750fd1b3b3181f7ffaed7768e.setContent(html_cd385bd8fa1cdf6bc76ca09b4466a33e);
+            
+        
+
+        marker_038da0b4d0822b686da2b7298e3f8b31.bindPopup(popup_b00575c750fd1b3b3181f7ffaed7768e)
+        ;
+
+        
+    
+    
+            marker_038da0b4d0822b686da2b7298e3f8b31.bindTooltip(
+                `<div>
+                     KUNOW (KAMIENNA)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_038da0b4d0822b686da2b7298e3f8b31.setIcon(icon_262d7070638d7554e3c18c3886efb08a);
+            
+    
+            tile_layer_9e5855ff36489e34f3620654f3798624.addTo(map_2cdda2d30516548c58052f6dc6da7b4c);
+        
+    
+                marker_03174aef279c3a5b448baabd40fb1c42.setIcon(icon_0639064db57819e2b41f09def74af680);
+            
+    
+                marker_222518367e0bd579cc25c03dce7745fb.setIcon(icon_e838bda19a501501d0501e11d47dda22);
+            
+    
+                marker_9af4b3c3463d965f04fdef94c1a55891.setIcon(icon_8d52e717a77a80016aba7240ccb467ce);
+            
+    
+                marker_e3942e6095ab60f65bd8ae7cd7866462.setIcon(icon_0f221ac1b84d70f842eea9b893b3bb1e);
+            
+    
+                marker_22893c6d0ebe89417fdfd2b1bd23a0ac.setIcon(icon_7e2d24dbb0cb792e9b9022b75682a801);
+            
+    
+                marker_7dbd49554613f18a9fead335c400e557.setIcon(icon_f32e0d05e26b11b95b6548a1692a4faa);
+            
+    
+                marker_1d17d1876001c852b1c754b6bfe73e61.setIcon(icon_2ff7261d0a0962c9eeb6e0b14cbeca75);
+            
+    
+                marker_e5e233483886af3abfeb51a35a803a46.setIcon(icon_ba5faeb6ebe3b0379be1988b6e7ac183);
+            
+    
+                marker_24f4f55a34151b575c251e5b02171172.setIcon(icon_fd4527a455e61fef7408189eb7dff9dd);
+            
+    
+                marker_1a8c14341c94e38fa502b9758a7cdee9.setIcon(icon_d36f8b517a8be70a53ca776b81694d2a);
+            
+    
+                marker_09e4b1a84ab2cf38df9074f19a7931f0.setIcon(icon_d0d6bab9faa9709459e788d788f7f656);
+            
+    
+                marker_5fbcf263cada443c52dccb903ad75bd5.setIcon(icon_d46a0485f91152de7968849350051326);
+            
+    
+                marker_98aa78f33be64962ef77d6d528547a00.setIcon(icon_2556e964bab2470ed2977672b460c7c2);
+            
+    
+                marker_549c35494ae9571e06f8a67f1f04aba6.setIcon(icon_406ec2817948a83dd935fd13c0defbb5);
+            
+    
+                marker_92291613c3d979b58254d622b4df9784.setIcon(icon_b647cab5fcf64f2ad5a42678632ac991);
+            
+    
+                marker_2d19e98c6f9111a0a4d738e897895068.setIcon(icon_57a2a164161234f53c53a442721e8802);
+            
+    
+                marker_85a718400c84baa59fd7d9d88386d284.setIcon(icon_ed0741c6a47775224f9dbf3cb10d1461);
+            
+    
+                marker_92331edc091a3030ed6d10309b44622c.setIcon(icon_0677590cb30b7016011c912e229f5de2);
+            
+    
+                marker_761243053c6b052fa3638126ceefcfe1.setIcon(icon_6777cc7e60446abd1781db14f35641f3);
+            
+    
+                marker_6a3e6ee32b9abd06e23827794c696db1.setIcon(icon_1a4055d5aa43dac67e67ee7a688243a2);
+            
+    
+                marker_1fb7c7e92929e9f4d9a8494a1dee5aef.setIcon(icon_c356c6a64ac1ca6eaf60d30c863cb07b);
+            
+    
+                marker_bd4cb308a1545693f1c25118c4d6730f.setIcon(icon_e63167e4410455de51cbc7266b3b94b2);
+            
+    
+                marker_dc2821a7eb497c04cc497291bd1d5335.setIcon(icon_c749f8f4f358d33f741178d79074b9f4);
+            
+    
+                marker_65a28f039399162f6d995fdadf4db69b.setIcon(icon_fa87ee28eb98f1f7b457a80f03bc86bc);
+            
+    
+                marker_f705e5028ae82a9932bed4143a91a3d4.setIcon(icon_82b2f663a2e5c1956595c6ddce898f8f);
+            
+    
+                marker_283b58d1bf78f9c6e45aa24b6c1d3889.setIcon(icon_0ca5b36e23508002a1d6f99b306349f6);
+            
+    
+                marker_e800ef49c1c89b90cf74b61ae82abad0.setIcon(icon_0760ab1ff7d109afee857e9ef1608966);
+            
+    
+                marker_28b387846fba1cefbc4c345030350168.setIcon(icon_f61b5352466b6148b4026bb421a24181);
+            
+    
+                marker_35c573177df7c7c627f008282a6365f0.setIcon(icon_fc5bc629cc17741a37803ef8b6b4eb67);
+            
+    
+                marker_437ba802c4575b2b341b7da7974d0f83.setIcon(icon_78db39f8bb219a401b7dc28b67b7cb8f);
+            
+    
+                marker_6501778e82a5ae6bed0940cea82248a3.setIcon(icon_1e2076630b69921e8a68805c5d0d2b38);
+            
+    
+                marker_9796ea44184a2f17e05e0f9a6959eb23.setIcon(icon_eb3fec114aa962380d8eeefca43ac9d1);
+            
+    
+                marker_57f0cd1f2e7040b5974b3b8758b47821.setIcon(icon_6adb459b85da5d06aec5d8dda9b44cd7);
+            
+    
+                marker_557eabe439fd3dddabd988ae85088014.setIcon(icon_649219e67f3272cfa6ff3cb04abb7472);
+            
+    
+                marker_e1c9857f06f455db34f8f186095d03ff.setIcon(icon_6dc80763577106e0481a8033618dad23);
+            
+    
+                marker_682eafcbb28360c4869ce7e8a125d99b.setIcon(icon_052746af422212c228ec1e8544ff4c7a);
+            
+    
+                marker_6d110d1c028046b23dfa431839ac1ff5.setIcon(icon_8f72c64ee55f95332579748aec9a37f9);
+            
+    
+                marker_3cc61c7c19136d4078434bb0edae50e6.setIcon(icon_5b7aa58fc50a95cc9bd9213afb9a23bf);
+            
+    
+                marker_512080c5803bb73fef7a0a39c0d0501e.setIcon(icon_c860af10efdfbe9a4d5fca3158e2e1e8);
+            
+    
+                marker_c625ee4ad0b2c7c4e775d9b4fc774c8c.setIcon(icon_a1df1d15f6f8a1f73de9256f1977012c);
+            
+    
+                marker_2be8aab81ef077185bc51400b6961821.setIcon(icon_f8cba72510527bf5be917682e20a5049);
+            
+    
+                marker_ed34261a0b1848b22f8a5ebf0de4ece0.setIcon(icon_415b8edc518008bfafa6680ff5603a25);
+            
+    
+                marker_0f427c2f6505271539ca4d67809402f6.setIcon(icon_060a6ff53ec9309fb65c245d8dbbd81e);
+            
+    
+                marker_44f1e6d9cfc205c07369b5366f3382bc.setIcon(icon_7fd4a56ba2ab19407c80376ccc8e9060);
+            
+    
+                marker_b74653db21749555ef97d914fda8a97b.setIcon(icon_f1ebcc7f4c08ce97622ad2914018dcc2);
+            
+    
+                marker_aacad73ae28291a2e320c9ee3ac2648d.setIcon(icon_f5a1ee54a7bbf36a00bad67d5bcd50b6);
+            
+    
+                marker_77f4b803a7aa81b52c63cfb74411ea0a.setIcon(icon_dd37c46300687e5c145469c4d79224ef);
+            
+    
+                marker_bf93dc7773cd1cbaa0023a9d9171f93c.setIcon(icon_3f21f87c54c2faa7164a823da60adfd3);
+            
+    
+                marker_78bd41d5224f0917eb599d5d50fd8552.setIcon(icon_67fbf782f38b347dd48d0f9f5a6474a2);
+            
+    
+                marker_0e2bb0d147fc681d4932489f7e1b75b6.setIcon(icon_37666b2bfb314d5ee80ba47504706a91);
+            
+    
+                marker_03a9727e1a3c5abc5f2382e2c9f001db.setIcon(icon_3f8e4a250feaffd66683807099f27993);
+            
+    
+                marker_febff321d2792dfdb4b0fe81db7ee36d.setIcon(icon_b61423a18af95f6dd3add654672197dc);
+            
+    
+                marker_c4328b31805f75400830ed3350564d79.setIcon(icon_ff4bc03c6b576cab1a5d8ffeb783b01b);
+            
+    
+                marker_ed6db747436202b8b0ed83fc3249754e.setIcon(icon_1649300569f85c9c34bcc74d51fa939b);
+            
+    
+                marker_6c2ed6710d1a0ecec8aae5f011249c08.setIcon(icon_0a4f3918991f54b2a4f4b332f05d4477);
+            
+    
+                marker_02ad30232db993afb43e0bf903247c04.setIcon(icon_a2599654836df6db0f05604efe476631);
+            
+    
+                marker_66e889f815f1a15d7302cb7dfc927871.setIcon(icon_199866d0f224bdb75d13f2e5ab25db86);
+            
+    
+                marker_06ad532ba17dc27f1ba30e6ddf1a2313.setIcon(icon_2aabe5669d0eca71de15e6766e25665b);
+            
+    
+                marker_3d50e9bd0676f9db658c441ae6204f4e.setIcon(icon_0016d695754abe39286096b49f61412e);
+            
+    
+                marker_00d4ce2ec077051bf2ff6b6f583f78ab.setIcon(icon_e782a383c21ee082912fe2a713ceef0e);
+            
+    
+                marker_a6d9b6abb874539a316d37e294cabefd.setIcon(icon_3bcff738abdef73dcb306752df8347c6);
+            
+    
+                marker_989a0d22645df295566951f6e7cd62ab.setIcon(icon_034aaac16b539717f30d3dc413e7f8dc);
+            
+    
+                marker_3a3785fe38cca959e2adddba0404737e.setIcon(icon_7fc4a23c98cf66c43c04c89fd2b01aaf);
+            
+    
+                marker_8e90231bd5e32aa265a3a967d5dfb0ac.setIcon(icon_d3a26daa71e3f1487fc04a2a98fb4c84);
+            
+    
+                marker_d143c35451518a8d34d235427930be05.setIcon(icon_9b47dc83a219933bd80ed06350c6aba8);
+            
+    
+                marker_a03a8efc2c33434bb5ba6e6d3a906c0d.setIcon(icon_f4ed29dedd5829a5c3d58ab495cfb881);
+            
+    
+                marker_5c324a45a5c93a6deee1e50010508f65.setIcon(icon_dcc4ddbd59fcafef528643b23712a896);
+            
+    
+                marker_e2ddf8778dadfd6b53593fb827f7c250.setIcon(icon_45e375b5eeeaddcd4364a45e5d229fb1);
+            
+    
+                marker_038da0b4d0822b686da2b7298e3f8b31.setIcon(icon_262d7070638d7554e3c18c3886efb08a);
+            
+</script>
+</html>

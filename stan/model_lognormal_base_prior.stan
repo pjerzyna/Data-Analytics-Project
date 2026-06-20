@@ -8,7 +8,6 @@ generated quantities {
   // ZAKTUALIZOWANE, ZBALANSOWANE PRIORY
   
   // mu_global: Średni przepływ polskich rzek w skali log. 
-  // Rozluźniona wariancja z 1.0 na 1.2, daje więcej oddechu dla większych rzek.
   real mu_global = normal_rng(3, 1.2);
   
   // tau_mu: Zmienność między stacjami 

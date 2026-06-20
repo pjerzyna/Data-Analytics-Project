@@ -62,15 +62,11 @@ model {
   y ~ lognormal(mu_sta[station_id], sigma_sta[station_id]);
 }
 
-// Z powodów problemów z pamięcią RAM, ta część pliku została usunięta
-// i wykonana ręcznie za pomocą Numpy (trzeba to zmienić, ale to naraize najlepsze co mamy)
-
-
-// generated quantities {
-//   vector[N] y_rep;
-//   vector[N] log_lik;
-//   for (n in 1:N) {
-//     y_rep[n]   = lognormal_rng(mu_sta[station_id[n]], sigma_sta[station_id[n]]);
-//     log_lik[n] = lognormal_lpdf(y[n] | mu_sta[station_id[n]], sigma_sta[station_id[n]]);
-//   }
-// }
+generated quantities {
+  vector[N] y_rep;
+  vector[N] log_lik;
+  for (n in 1:N) {
+    y_rep[n]   = lognormal_rng(mu_sta[station_id[n]], sigma_sta[station_id[n]]);
+    log_lik[n] = lognormal_lpdf(y[n] | mu_sta[station_id[n]], sigma_sta[station_id[n]]);
+  }
+}

@@ -67,17 +67,29 @@ Adds a third grouping level - the river - so that stations partially pool toward
 
 **Model equations:**
 
-$$y_n \sim \text{LogNormal}(\mu_{s[n]}, \sigma_{s[n]})$$
+$$
+y_n \sim \text{LogNormal}(\mu_{s[n]}, \sigma_{s[n]})
+$$
 
 River → Station level (centered):
 
-$$\mu_s \sim \mathcal{N}(\mu_{r[s]},\ \tau_{\mu,\text{sta}}), \qquad \log\sigma_s \sim \mathcal{N}(\log\sigma_{r[s]},\ \tau_{\sigma,\text{sta}}), \qquad \sigma_s = \exp(\log\sigma_s)$$
+$$
+\mu_s \sim \mathcal{N}(\mu_{r[s]},\ \tau_{\mu,\text{sta}}), \qquad
+\log\sigma_s \sim \mathcal{N}(\log\sigma_{r[s]},\ \tau_{\sigma,\text{sta}}), \qquad
+\sigma_s = \exp(\log\sigma_s)
+$$
 
 Global → River level (non-centered):
 
-$$\mu_r = \mu_{\text{global}} + \tau_{\mu,\text{riv}} \cdot z_{\mu,r}, \qquad \log\sigma_r = \log\sigma_{\text{global}} + \tau_{\sigma,\text{riv}} \cdot z_{\sigma,r}, \qquad \sigma_r = \exp(\log\sigma_r)$$
+$$
+\mu_r = \mu_{\text{global}} + \tau_{\mu,\text{riv}} \cdot z_{\mu,r}, \qquad
+\log\sigma_r = \log\sigma_{\text{global}} + \tau_{\sigma,\text{riv}} \cdot z_{\sigma,r}, \qquad
+\sigma_r = \exp(\log\sigma_r)
+$$
 
-$$z_{\mu,r} \sim \mathcal{N}(0,\ 1), \qquad z_{\sigma,r} \sim \mathcal{N}(0,\ 1)$$
+$$
+z_{\mu,r} \sim \mathcal{N}(0,\ 1), \qquad z_{\sigma,r} \sim \mathcal{N}(0,\ 1)
+$$
 
 The global-level hyperparameters define the national reference point, while the $\tau$ parameters at each level control the strength of shrinkage: the smaller $\tau$, the more strongly stations are pulled toward the mean of their parent river.
 
@@ -138,70 +150,25 @@ Both models fire well above the nominal 5% / 1% rates, and the two are almost in
 The ranking exposes a clear failure mode rather than a hydrological one: **OJCÓW flags 94% of all days as anomalous**, which is diagnostic of a poor per-station fit rather than of a genuinely anomalous year at that gauge. The extended model reproduces this ranking almost exactly - only marginal shifts (e.g. BRODNICA 64 → 63, LOCHOW 50 → 49 anomaly-days) - confirming that the nested hierarchy sharpens the interpretation of variance (station vs river) far more than it changes downstream alarm behaviour.
 
 
-## ⚖️ Model Comparison (LOO / WAIC)
+## ⚖️ Model Comparison (LOO)
 
-Information-theoretic comparison of the baseline and v2 models on a 3,000-observation subsample yields:
+Information-theoretic comparison of the baseline and extended model on a 3,000-observation subsample yields:
 
 $$\Delta\text{LOO} = 0.05 \pm 169.36 \quad \Rightarrow \quad \textbf{statistically indistinguishable}$$
 
-Neither river-level partial pooling nor the catchment covariate improves out-of-sample predictive quality. With $N_s \approx 300$–500 observations per station, the **likelihood overwhelms the prior**: each station has enough data to estimate its own parameters, leaving the hierarchical shrinkage mechanisms with essentially no work to do.
+River-level partial pooling did not improve out-of-sample predictive quality. With $N_s \approx 300$–500 observations per station, the likelihood overwhelms the prior: each station has enough data to estimate its own parameters, leaving the hierarchical shrinkage mechanisms with essentially no work to do.
 
-## Key Findings
 
-- **A significant physical-geographic effect exists.** The catchment area covariate is statistically significant: $\alpha_c = -0.117$ (95% CI: $[-0.165, -0.065]$). Smaller catchments exhibit **higher relative flow variability** than large lowland rivers — a well-known hydrological relationship, since large catchments aggregate precipitation over vast areas and smooth out local extremes.
-- **…but it is operationally too weak.** The effect changes 95% thresholds by at most 1.14% at any station and shifts no alarm decisions during 2024 backtesting.
-- **The baseline model is a strong benchmark.** It captures bulk flow dynamics and flood-tail behavior, converges cleanly, and its thresholds are well calibrated at the national scale.
-- **Persistent localized pathologies point to unmodeled physics.** Stations like Ptaki (28.96% false alarms) and Dobrylas (27.2%) deviate identically under every model variant, suggesting local hydraulic factors (reservoir management, flow regulation, flood-plain geometry) rather than statistical miscalibration.
 
-## Limitations & Future Work
+## 💡 Summary
 
-1. **Temporal independence assumption.** Daily discharges are strongly autocorrelated (catchment routing, groundwater recession); treating them as i.i.d. underestimates posterior variance. An **AR(1)** or latent state-space extension is the natural next step.
-2. **No seasonality.** Parameters $\mu_s, \sigma_s$ are constant across the year, ignoring spring snowmelt floods and summer–autumn low flows. A time-varying component $\mu_s(t)$ would directly address the PTAKI pathology.
-3. **Continuous likelihood at low flows.** The log-normal cannot represent discrete sensor-limit artifacts at $Q < 0.1$ m³/s; a censored or mixture likelihood could.
-4. **Additional stable covariates.** Altitude (m ASL) is available in the dataset and could complement catchment area as a predictor of $\sigma_s$.
+- **The baseline model is a strong benchmark.** It captures the bulk flow dynamics and the flood tail, converges cleanly, and its thresholds are well calibrated at the national scale.
+- **The nested hierarchy pays off in interpretability, not raw fit.** The global posterior fits are visually near-identical and the 2024 exceedance rates differ by only ~12 anomaly-days out of 22,203 - but the extended model decomposes *where* the variability lives.
+- **Typical flow magnitude is a local (station) property; volatility is a basin (river) property.** The variance split shows $\tau_{\mu,\text{sta}} = 1.453 > \tau_{\mu,\text{riv}} = 1.212$ (location dominated by station geomorphology) while $\tau_{\sigma,\text{riv}} = 0.447 \gg \tau_{\sigma,\text{sta}} = 0.178$ (dispersion dynamics shared basin-wide). Nesting also pulls the global median down from ≈18.2 to ≈9.8 m³/s, stopping clusters of active stations from inflating the national baseline.
 
-## Repository Structure
 
-```
-.
-├── nested_hierarchical.ipynb       # Main analysis notebook (English)
-├── nested_hierarchical_pl.ipynb    # Main analysis notebook (Polish)
-├── stan/
-│   ├── model_lognormal_base_prior.stan   # Baseline — prior predictive
-│   ├── model_lognormal_base.stan         # Baseline — posterior
-│   ├── model_lognormal_ext_prior.stan    # Extended — prior predictive
-│   ├── model_lognormal_ext_gen_qq.stan   # Extended v1 — posterior + generated quantities
-│   └── model_lognormal_ext_v2.stan       # Extended v2 — catchment covariate
-├── dataset/                        # Raw GRDC files
-├── dataset_cleaned/                # Extracted TXT (2023–2025)
-├── dataset_cleaned_csv/            # Flat CSVs (STATION_RIVER.csv)
-├── session_data/                   # Cached posterior draws (.npy) for fast reload
-├── media/                         # Figures used in this README
-└── data_model_comparison           # Data related to anomaly validation and threshold for particular models
-```
+Both models show a moderate ≈−5 pp undercoverage (empirical 95%-interval coverage of ~90%) and a persistent low-flow artifact for $Q \leq 0.1$ m³/s - the continuous log-normal cannot reproduce the discrete near-zero / dry-bed spikes. The main structural gaps. At first temporal independence assumption.** Daily discharges are strongly autocorrelated (catchment routing, groundwater recession); treating them as i.i.d. underestimates posterior variance and inflates exceedance counts.  Parameters $\mu_s, \sigma_s$ are constant across the year, ignoring (seasnoality) spring snowmelt floods and summer–autumn low flows. A time-varying component $\mu_s(t)$ would directly target the per-station pathologies exposed in the 2024 backtest - most starkly OJCÓW, which fires on 94% of days because a single frozen threshold cannot track a station whose regime shifts seasonally. Worth to underline is Log-normal observation model at the low-flow boundary. A hurdle / zero-inflated or mixture likelihood could capture the discrete dry-bed behaviour the log-normal blurs.
 
-## How to Run
+## 🙏 Acknowledgements
 
-**Requirements:** Python 3.10+, [CmdStan](https://mc-stan.org/users/interfaces/cmdstan) installed via CmdStanPy.
-
-```bash
-pip install cmdstanpy arviz numpy scipy pandas matplotlib folium xarray
-python -c "import cmdstanpy; cmdstanpy.install_cmdstan()"
-```
-
-Then open the notebook and run the cells top-to-bottom:
-
-```bash
-jupyter notebook nested_hierarchical.ipynb
-```
-
-Notes:
-
-- Full MCMC for the extended models uses `adapt_delta=0.99`, `max_treedepth=15`, and `thin=2` (memory management for `generated quantities`); expect a substantial runtime.
-- After a first full run, set `MODE = 0` in the *Saving and Loading Data* section to reload cached posterior draws from `session_data/` instead of re-sampling.
-
----
-
-*This project was developed as a study in principled Bayesian workflow — prior predictive calibration, hierarchical modeling, posterior predictive validation, out-of-sample backtesting, and information-theoretic model comparison — applied to real hydrological data from the Vistula basin.*
-
-> Data were provided by the Global Runoff Data Centre (GRDC), 56068 Koblenz, Germany.
+Data were provided by the Global Runoff Data Centre (GRDC), 56068 Koblenz, Germany.

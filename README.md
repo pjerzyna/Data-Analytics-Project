@@ -1,1 +1,196 @@
-This dataset contains information about Vistula Basins across last 50 years and was downloaded from the Global Runoff Data Centre. 
+# Bayesian Modelling of River Flow Anomaly Detection Accounting for Physical-Geographic Features in the Vistula Basin
+
+**Authors:** Paweł Jerzyna, Piotr Grzyb
+
+A fully Bayesian workflow for detecting anomalous daily river discharges across the Polish gauging network. The project builds a family of hierarchical log-normal models in **Stan** (via CmdStanPy), calibrates them on daily flow observations from 2023, derives per-station probabilistic anomaly thresholds, and backtests them on out-of-sample data from 2024. The final model incorporates a stable physical-geographic covariate — the **catchment area** — to decouple station-level variance estimation from the idiosyncrasies of a single baseline year.
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Data](#data)
+- [Gauging Station Network](#gauging-station-network)
+- [Models](#models)
+  - [1. Baseline Hierarchical Log-Normal Model](#1-baseline-hierarchical-log-normal-model)
+  - [2. Extended Nested Hierarchical Model (v1)](#2-extended-nested-hierarchical-model-v1)
+  - [3. Extended Model v2 — Catchment Area Covariate](#3-extended-model-v2--catchment-area-covariate)
+- [Posterior Predictive Checks](#posterior-predictive-checks)
+- [Anomaly Detection & 2024 Validation](#anomaly-detection--2024-validation)
+- [Model Comparison (LOO / WAIC)](#model-comparison-loo--waic)
+- [Key Findings](#key-findings)
+- [Limitations & Future Work](#limitations--future-work)
+- [Repository Structure](#repository-structure)
+- [How to Run](#how-to-run)
+
+---
+
+## Project Overview
+
+Daily river discharge $Q$ is strongly right-skewed: most days are dominated by low base flows, while floods are rare, extreme deviations. We model $Q$ with a **log-normal likelihood** inside a hierarchical structure that shares statistical strength across gauging stations (and, in the extended models, across rivers). Rather than forecasting day-to-day hydrographs, the models act as **stationary marginal density estimators**: they characterize the climatological probability distribution of flow magnitudes at each station and convert the posterior into interpretable **95% (anomaly)** and **99% (extreme / flood)** warning thresholds.
+
+The workflow follows a principled Bayesian pipeline:
+
+1. Data cleaning and preparation (GRDC raw files → flat CSV tables)
+2. Prior calibration via **Prior Predictive Checks** informed by hydrological domain knowledge
+3. Posterior inference with **NUTS/HMC** (4 chains, convergence verified with $\hat{R}$ and ESS)
+4. **Posterior Predictive Checks** against the empirical flow distribution
+5. Analytical derivation of per-station anomaly thresholds from the joint posterior
+6. Out-of-sample **backtesting on 2024 data**
+7. Information-theoretic model comparison (**LOO, WAIC**)
+
+## Data
+
+- **Source:** GRDC-style daily discharge records for hydrological stations in the Vistula basin and adjacent Polish river systems
+- **Period:** 2023 (training / baseline year) and 2024 (out-of-sample validation year)
+- **Scale:** $N > 22{,}000$ daily observations, $S = 69$ gauging stations, grouped into $R$ rivers
+- **Variables:** daily discharge $Q$ [m³/s], station coordinates, altitude, and catchment area [km²]
+
+The cleaning pipeline extracts the years 2023–2025 from raw GRDC files, converts them to flat CSVs with row-level metadata (river, station, coordinates, catchment area, altitude), and enforces a strict integrity check: the log-normal likelihood requires $y > 0$, so the pipeline halts on any non-positive values instead of silently filtering the data.
+
+## Gauging Station Network
+
+The measurement points span the entire Vistula basin — from small mountain headwater catchments in the Carpathians (e.g., Zakopane Harenda, ~1.8 m³/s median flow) to massive lowland channels near the river mouth (e.g., Tczew on the Vistula, catchment ~194,000 km², validation flows up to 3,100 m³/s).
+
+<p align="center">
+  <img src="media/vistula-basins-poland.png" width="600" alt="Distribution of gauging stations across the Vistula basin in Poland">
+</p>
+<p align="center"><em>Spatial distribution of the 69 gauging stations used in the study (interactive version generated with Folium: <code>stations_map.html</code>).</em></p>
+
+## Models
+
+### 1. Baseline Hierarchical Log-Normal Model
+
+A two-level hierarchy: station-specific parameters $(\mu_s, \sigma_s)$ are drawn from shared, country-wide global hyperparameters. A **centered parameterization** is used, which is optimal in this data-rich regime (25k+ observations), and the noise scale is modeled in log-space, guaranteeing $\sigma_s > 0$.
+
+<p align="center">
+  <img src="media/DAG_base.png" width="650" alt="DAG of the Baseline Hierarchical Log-Normal Model">
+</p>
+
+**Model equations:**
+
+$$y_n \sim \text{LogNormal}(\mu_{s[n]}, \sigma_{s[n]})$$
+
+$$\mu_s \sim \mathcal{N}(\mu_{\text{global}}, \tau_{\mu}), \qquad \log\sigma_s \sim \mathcal{N}(\log\sigma_{\text{global}}, \tau_{\sigma}), \qquad \sigma_s = \exp(\log\sigma_s)$$
+
+**Priors** (calibrated iteratively via Prior Predictive Checks so that the 99th percentile of simulated flows reaches a physically realistic ceiling of ~5,000 m³/s):
+
+| Parameter | Prior | Role |
+| :--- | :--- | :--- |
+| $\mu_{\text{global}}$ | $\mathcal{N}(3,\ 1.2)$ | Country-wide mean log-flow |
+| $\tau_{\mu}$ | $\text{Half-}\mathcal{N}(0,\ 1.2)$ | Inter-station variability of means |
+| $\log\sigma_{\text{global}}$ | $\mathcal{N}(0,\ 0.5)$ | Baseline noise scale |
+| $\tau_{\sigma}$ | $\text{Half-}\mathcal{N}(0,\ 0.5)$ | Inter-station variability of noise scales |
+
+**Convergence:** all parameters reached $\hat{R} \le 1.003$ with bulk/tail ESS > 5,000. The posterior $\mu_{\text{global}} = 2.787$ back-transforms to a median discharge of ~16.2 m³/s for an "average" station — a highly realistic network-wide baseline.
+
+### 2. Extended Nested Hierarchical Model (v1)
+
+Adds a third grouping level — the **river** — so that stations partially pool toward their parent river's profile: observation $n$ → station $s[n]$ → river $r[s[n]]$. To eliminate divergent transitions, the model uses a **hybrid parameterization**: non-centered (NCP) at the sparse Global → River level (removing Neal's funnel geometry) and centered (CP) at the data-rich River → Station level. Sampling uses stricter NUTS controls (`adapt_delta = 0.99`, `max_treedepth = 15`).
+
+### 3. Extended Model v2 — Catchment Area Covariate
+
+The final model keeps the nested structure and adds a **physical-geographic covariate**: the standardized log catchment area $\widetilde{c}_s$ enters the station-level noise scale as a linear regression term:
+
+$$\log\sigma_s = \underbrace{\log\sigma_{r[s]}}_{\text{river profile}} + \underbrace{\alpha_c \cdot \widetilde{c}_s}_{\text{catchment effect}} + \underbrace{\tau_{\sigma,\text{sta}} \cdot \tilde{\varepsilon}_s}_{\text{station noise}}$$
+
+<p align="center">
+  <img src="media/DAG_extended.png" width="650" alt="DAG of the Extended Hierarchical Regression Model">
+</p>
+
+The motivation is stability: catchment area is **constant over time**, so it can anchor the estimation of $\sigma_s$ instead of letting it depend entirely on the anomalies of a single baseline year. The prior $\alpha_c \sim \mathcal{N}(0, 0.5)$ is symmetric — the model does not presuppose the direction of the effect.
+
+## Posterior Predictive Checks
+
+Both the baseline and the extended models reproduce the empirical flow distribution remarkably well: the posterior replications $y_{\text{rep}}$ (light-blue cloud, 50 draws) track the empirical density (black line) from $10^0$ up to $10^3$ m³/s, capturing both the bulk of the distribution and the right tail of flood events.
+
+<p align="center">
+  <img src="media/model-comparison.png" width="1000" alt="Posterior Predictive Checks: Extended Nested Hierarchical model (left) vs Baseline Hierarchical model (right)">
+</p>
+<p align="center"><em>Left: Extended Model (Nested Hierarchical). Right: Baseline Hierarchical model. The global fits are visually indistinguishable.</em></p>
+
+Both models share the same structural limitation at the extreme low-flow boundary ($10^{-2}$–$10^{-1}$ m³/s): the continuous log-normal cannot replicate the sharp, discrete empirical artifacts caused by sensor detection limits, base-value rounding, and seasonal dry-bed anomalies.
+
+## Anomaly Detection & 2024 Validation
+
+Per-station warning thresholds are derived **analytically** from the log-normal quantile formula for every MCMC draw, then aggregated with the posterior median:
+
+$$Q_{95,s} = \text{median}\left[\exp(\mu_s + 1.645\,\sigma_s)\right], \qquad Q_{99,s} = \text{median}\left[\exp(\mu_s + 2.326\,\sigma_s)\right]$$
+
+Backtesting on **22,203 station-days** of 2024 data:
+
+| Metric | Baseline | v1 (Nested) | v2 (Catchment) |
+| :--- | :---: | :---: | :---: |
+| 95% alarms (% station-days) | 8.26% | 8.27% | 8.27% |
+| 99% extremes (% station-days) | 1.56% | 1.58% | 1.56% |
+| Stations with 0% extreme detection | 27 | 27 | 27 |
+| PTAKI — false alarm rate | 28.96% | 28.96% | 28.96% |
+| MYSZYNIEC — detection rate | 0.00% | 0.00% | 0.00% |
+
+The slight elevation over the theoretical 5% / 1% expectation indicates that 2024 was a somewhat wetter, more dynamic year than the 2023 baseline. Crucially, the model detects anomalies across completely different hydrological scales — flagging extremes on a small stream like Ptaki (max flow 28.7 m³/s) and on the lower Vistula at Tczew (max flow 3,100 m³/s) simultaneously.
+
+## Model Comparison (LOO / WAIC)
+
+Information-theoretic comparison of the baseline and v2 models on a 3,000-observation subsample yields:
+
+$$\Delta\text{LOO} = 0.05 \pm 169.36 \quad \Rightarrow \quad \textbf{statistically indistinguishable}$$
+
+Neither river-level partial pooling nor the catchment covariate improves out-of-sample predictive quality. With $N_s \approx 300$–500 observations per station, the **likelihood overwhelms the prior**: each station has enough data to estimate its own parameters, leaving the hierarchical shrinkage mechanisms with essentially no work to do.
+
+## Key Findings
+
+- **A significant physical-geographic effect exists.** The catchment area covariate is statistically significant: $\alpha_c = -0.117$ (95% CI: $[-0.165, -0.065]$). Smaller catchments exhibit **higher relative flow variability** than large lowland rivers — a well-known hydrological relationship, since large catchments aggregate precipitation over vast areas and smooth out local extremes.
+- **…but it is operationally too weak.** The effect changes 95% thresholds by at most 1.14% at any station and shifts no alarm decisions during 2024 backtesting.
+- **The baseline model is a strong benchmark.** It captures bulk flow dynamics and flood-tail behavior, converges cleanly, and its thresholds are well calibrated at the national scale.
+- **Persistent localized pathologies point to unmodeled physics.** Stations like Ptaki (28.96% false alarms) and Dobrylas (27.2%) deviate identically under every model variant, suggesting local hydraulic factors (reservoir management, flow regulation, flood-plain geometry) rather than statistical miscalibration.
+
+## Limitations & Future Work
+
+1. **Temporal independence assumption.** Daily discharges are strongly autocorrelated (catchment routing, groundwater recession); treating them as i.i.d. underestimates posterior variance. An **AR(1)** or latent state-space extension is the natural next step.
+2. **No seasonality.** Parameters $\mu_s, \sigma_s$ are constant across the year, ignoring spring snowmelt floods and summer–autumn low flows. A time-varying component $\mu_s(t)$ would directly address the PTAKI pathology.
+3. **Continuous likelihood at low flows.** The log-normal cannot represent discrete sensor-limit artifacts at $Q < 0.1$ m³/s; a censored or mixture likelihood could.
+4. **Additional stable covariates.** Altitude (m ASL) is available in the dataset and could complement catchment area as a predictor of $\sigma_s$.
+
+## Repository Structure
+
+```
+.
+├── nested_hierarchical.ipynb       # Main analysis notebook (English)
+├── nested_hierarchical_pl.ipynb    # Main analysis notebook (Polish)
+├── stan/
+│   ├── model_lognormal_base_prior.stan   # Baseline — prior predictive
+│   ├── model_lognormal_base.stan         # Baseline — posterior
+│   ├── model_lognormal_ext_prior.stan    # Extended — prior predictive
+│   ├── model_lognormal_ext_gen_qq.stan   # Extended v1 — posterior + generated quantities
+│   └── model_lognormal_ext_v2.stan       # Extended v2 — catchment covariate
+├── dataset/                        # Raw GRDC files
+├── dataset_cleaned/                # Extracted TXT (2023–2025)
+├── dataset_cleaned_csv/            # Flat CSVs (STATION_RIVER.csv)
+├── session_data/                   # Cached posterior draws (.npy) for fast reload
+├── media/                         # Figures used in this README
+└── data_model_comparison           # Data related to anomaly validation and threshold for particular models
+```
+
+## How to Run
+
+**Requirements:** Python 3.10+, [CmdStan](https://mc-stan.org/users/interfaces/cmdstan) installed via CmdStanPy.
+
+```bash
+pip install cmdstanpy arviz numpy scipy pandas matplotlib folium xarray
+python -c "import cmdstanpy; cmdstanpy.install_cmdstan()"
+```
+
+Then open the notebook and run the cells top-to-bottom:
+
+```bash
+jupyter notebook nested_hierarchical.ipynb
+```
+
+Notes:
+
+- Full MCMC for the extended models uses `adapt_delta=0.99`, `max_treedepth=15`, and `thin=2` (memory management for `generated quantities`); expect a substantial runtime.
+- After a first full run, set `MODE = 0` in the *Saving and Loading Data* section to reload cached posterior draws from `session_data/` instead of re-sampling.
+
+---
+
+*This project was developed as a study in principled Bayesian workflow — prior predictive calibration, hierarchical modeling, posterior predictive validation, out-of-sample backtesting, and information-theoretic model comparison — applied to real hydrological data from the Vistula basin.*

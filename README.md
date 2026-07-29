@@ -28,7 +28,10 @@ The cleaning pipeline extracts the years 2023–2025 from raw GRDC files, conver
 
 The measurement points span the entire Vistula basin which have up to date data. From small mountain headwater catchments in the Carpathians (e.g., Zakopane Harenda, ~1.8 m³/s median flow) to massive lowland channels near the river mouth (e.g., Tczew on the Vistula, validation flows up to 3,100 m³/s).
 
-
+<p align="center">
+  <img src="media/vistula-basins-poland.png" width="600" alt="Distribution of gauging stations across the Vistula basin in Poland">
+</p>
+<p align="center"><em>Spatial distribution of the 69 gauging stations used in the study</em></p>
 
 ## 🧮 Models
 

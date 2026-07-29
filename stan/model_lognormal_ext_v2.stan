@@ -59,3 +59,9 @@ model {
   // Likelihood
   y ~ lognormal(mu_sta[station_id], sigma_sta[station_id]);
 }
+
+generated quantities {
+  vector[N] log_lik;
+  for (n in 1:N)
+    log_lik[n] = lognormal_lpdf(y[n] | mu_sta[station_id[n]], sigma_sta[station_id[n]]);
+}

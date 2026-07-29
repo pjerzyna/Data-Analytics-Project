@@ -6,6 +6,8 @@
 > **Authors**: [Paweł Jerzyna](https://github.com/pjerzyna), Piotr Grzyb  
 > **Method**: Hierarchical log-normal models in Stan with probabilistic per-station anomaly thresholds
 
+$$E = mc^2$$
+
 ## 🌊 Project Overview
 
 A fully Bayesian workflow for detecting anomalous daily river discharges across the Vistula basins. The project builds a family of hierarchical log-normal models in Stan, calibrates them on daily flow observations from 2023, derives per-station probabilistic anomaly thresholds, and backtests them on out-of-sample data from 2024.

@@ -1,0 +1,5 @@
+# Wykluczanie wszystkich plików HTML z wyliczania języka
+*.html linguist-vendored
+
+# Wykluczanie konkretnego notatnika (wybierz jeden z nich):
+nested_hierarchical_pl.ipynb linguist-vendored

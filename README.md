@@ -6,7 +6,6 @@
 > **Authors**: [Paweł Jerzyna](https://github.com/pjerzyna), Piotr Grzyb  
 > **Method**: Hierarchical log-normal models in Stan with probabilistic per-station anomaly thresholds
 
-$$E = mc^2$$
 
 ## 🌊 Project Overview
 
@@ -24,6 +23,8 @@ Daily river discharge $Q$ is strongly right-skewed: most days are dominated by l
 
 The cleaning pipeline extracts the years 2023–2025 from raw GRDC files, converts them to flat CSVs with row-level metadata (river, station, coordinates, catchment area, altitude), and enforces a strict integrity check: the log-normal likelihood requires $y > 0$, so the pipeline halts on any non-positive values instead of silently filtering the data.
 
+$$E = mc^2$$
+
 ## 📍 Gauging Station Network
 
 The measurement points span the entire Vistula basin which have up to date data. From small mountain headwater catchments in the Carpathians (e.g., Zakopane Harenda, ~1.8 m³/s median flow) to massive lowland channels near the river mouth (e.g., Tczew on the Vistula, validation flows up to 3,100 m³/s).
@@ -33,11 +34,15 @@ The measurement points span the entire Vistula basin which have up to date data.
 </p>
 <p align="center"><em>Spatial distribution of the 69 gauging stations used in the study
 
+$$E = mc^2$$
+
 ## 🧮 Models
 
 ### 1. Baseline Hierarchical Log-Normal Model
 
 A two-level hierarchy: station-specific parameters $(\mu_s, \sigma_s)$ are drawn from shared, country-wide global hyperparameters. A centered parameterization is used, which is optimal in this data-rich regime (25k+ observations), and the noise scale is modeled in log-space, guaranteeing $\sigma_s > 0$.
+
+$$E = mc^2$$
 
 <p align="center">
   <img src="media/DAG_base.png" width="650" alt="DAG of the Baseline Hierarchical Log-Normal Model">
@@ -48,6 +53,8 @@ A two-level hierarchy: station-specific parameters $(\mu_s, \sigma_s)$ are drawn
 $$y_n \sim \text{LogNormal}(\mu_{s[n]}, \sigma_{s[n]})$$
 
 $$\mu_s \sim \mathcal{N}(\mu_{\text{global}}, \tau_{\mu}), \qquad \log\sigma_s \sim \mathcal{N}(\log\sigma_{\text{global}}, \tau_{\sigma}), \qquad \sigma_s = \exp(\log\sigma_s)$$
+
+$$E = mc^2$$
 
 **Priors** (the 99th percentile of simulated flows reaches a physically realistic ceiling of ~5,000 m³/s):
 
